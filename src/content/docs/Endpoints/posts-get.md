@@ -1,0 +1,50 @@
+---
+title: "posts [GET]"
+---
+
+Retrieve community and site-wide posts by 'hot', 'activity', etc.
+
+Response for normal feeds (for a request like: `/api/posts?feed=home&sort=hot`):
+
+```ts
+type Response = {
+  posts: Post[]; // Array of posts
+  next: string | null; // Pagination cursor (null implies end of pagination)
+};
+```
+
+If the query parameter `filter` is set and it's not `all`, the request is only allowed for moderators and admins. And these result sets are page-paginated rather than cursor-paginated.
+
+Response for moderator feeds (for a request like `/api/posts?communityId=17692e122def73f25bd757e0&filter=deleted`):
+
+```ts
+type Response = {
+  noPosts: number; // Posts count
+  limit: number;
+  page: number; // Current page number
+  posts: Post[]; // Array of posts
+};
+```
+
+## Query parameters
+
+| Name          | Description                                                                 |
+| ------------- | --------------------------------------------------------------------------- |
+| `feed`        | One of: `home`, `all`, `community`.                                         |
+| `filter`      | One of: `all`, `deleted`, `locked`. If not set, `all` is the default.\*     |
+| `sort`        | One of: `latest`, `hot`, `activity`, `day`, `week`, `month`, `year`, `all`. |
+| `communityId` | If this field is set, posts of this community will be returned.             |
+| `next`        | The pagination cursor. If null, there's no next result set                  |
+| `limit`       | The max number of items in a result set.                                    |
+
+\* The filter parameter is available only if the authenticated user is a
+moderator or an admin.
+
+#### Possible errors
+
+| HTTP Status Code | [APIError](/errors) code |
+| ---------------- | ------------------------ |
+| 403              | not_admin                |
+| 400              | invalid_cursor           |
+| 400              | invalid_limit            |
+| 400              | invalid_filter           |
