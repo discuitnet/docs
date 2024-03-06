@@ -29,8 +29,8 @@ export default defineConfig({
           autogenerate: { directory: "Endpoints" },
         },
         {
-          label: "Objects",
-          link: "/objects",
+          label: "Types",
+          link: "/types",
         },
       ],
       social: {
