@@ -7,6 +7,7 @@ Requests must have the following JSON body:
 ```ts
 type Request = {
   username: string;
+  email: string;
   password: string;
 
   // reCAPTCHA v2 token
@@ -15,6 +16,10 @@ type Request = {
 ```
 
 If everything goes well the JSON object of the newly created account is returned.
+
+```ts
+type Response = User | APIError;
+```
 
 Upon successful signup, the user is logged in automatically in the current session, so there's no need to call [`/api/_login`](/endpoints/login-post) again.
 

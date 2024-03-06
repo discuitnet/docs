@@ -15,4 +15,8 @@ If the username and password matches, the user object is returned. Otherwise, a 
 
 If the user account is suspended, a 403 (forbidden) status is returned with an [APIError](/errors) code `"account_suspended"`.
 
+```ts
+type Response = User | APIError;
+```
+
 If the user is authenticated and the request URL has the query parameter `action=logout`, user is logged out from the session. No request body is required for logout. In other words, to logout a user, send a POST request to `/api/_login?action=logout`.
