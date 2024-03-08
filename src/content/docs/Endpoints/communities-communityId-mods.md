@@ -1,6 +1,12 @@
 ---
-title: "communities/{communityId}/mods [POST]"
+title: "communities/{communityId}/mods"
 ---
+
+## GET
+
+Returns an array of User objects. The response could be null.
+
+## POST
 
 Make a user a moderator of a community.
 

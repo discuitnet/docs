@@ -1,6 +1,27 @@
 ---
-title: "posts/{postId} [PUT]"
+title: "posts/{postId}"
 ---
+
+## DELETE
+
+Deletes a post. Returns the deleted post.
+
+### Query Parameters
+
+| Name          | Description                                                          |
+| ------------- | -------------------------------------------------------------------- |
+| deleteAs      | One of: `normal`, `mods`, `admins`. With `normal` being the default. |
+| deleteContent | Boolean. If `true`, the body of the post is also deleted.\*          |
+
+\* For link-posts this is the link. For text post this is the text. For image posts these are the image(s).
+
+## GET
+
+Returns a post object.
+
+If the query parameter `fetchCommunity` is set to `true`, `post.community` field is populated (otherwise it's null).
+
+## PUT
 
 Updates a post. Must have the correct permissions.
 
@@ -21,7 +42,7 @@ Moderators and admins can change the "officially speaking" indicator by passing 
 
 Post body or title is not updated on requests with an `action=` query parameter.
 
-## Possible errors
+### Possible errors
 
 | HTTP Status Code | [APIError](/errors) code |
 | ---------------- | ------------------------ |

@@ -1,6 +1,8 @@
 ---
-title: "push_subscriptions [POST]"
+title: "push_subscriptions"
 ---
+
+## POST
 
 ```ts
 type Response = {

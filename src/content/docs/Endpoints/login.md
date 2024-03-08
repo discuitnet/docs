@@ -1,6 +1,8 @@
 ---
-title: "_login [POST]"
+title: "_login"
 ---
+
+## POST
 
 Requests must have the following JSON body:
 

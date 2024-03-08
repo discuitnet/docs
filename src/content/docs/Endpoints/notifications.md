@@ -1,6 +1,19 @@
 ---
-title: "notifications [POST]"
+title: "notifications"
 ---
+
+## GET
+
+```ts
+type Response = {
+  count: int;
+  newCount: int;
+  items: Notification[];
+  next: string;
+};
+```
+
+## POST
 
 You can send POST requests with query parameters `?action=resetNewCount`, `?action=markAllAsSeen` or `?action=deleteAll`. No request body is needed.
 

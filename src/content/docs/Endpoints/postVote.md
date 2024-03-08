@@ -1,6 +1,8 @@
 ---
-title: "_postVote [POST]"
+title: "_postVote"
 ---
+
+## POST
 
 Votes a post up or down and returns the post. If already voted, then changes the vote.
 

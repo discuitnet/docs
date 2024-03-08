@@ -1,6 +1,12 @@
 ---
-title: "communities/{communityId}/rules [POST]"
+title: "communities/{communityId}/rules"
 ---
+
+## GET
+
+Returns an array of community rules.
+
+## POST
 
 Creates a community rule.
 

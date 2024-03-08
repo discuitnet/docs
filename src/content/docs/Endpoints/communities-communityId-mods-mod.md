@@ -1,6 +1,8 @@
 ---
-title: "communities/{communityId}/mods/{mod} [DELETE]"
+title: "communities/{communityId}/mods/{mod}"
 ---
+
+## DELETE
 
 Remove a user as a moderator of a community.
 

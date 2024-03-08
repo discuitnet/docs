@@ -1,6 +1,8 @@
 ---
-title: "posts [GET]"
+title: "posts"
 ---
+
+## GET
 
 Retrieve community and site-wide posts by 'hot', 'activity', etc.
 
@@ -26,7 +28,7 @@ type Response = {
 };
 ```
 
-## Query parameters
+### Query parameters
 
 | Name          | Description                                                                 |
 | ------------- | --------------------------------------------------------------------------- |
@@ -40,7 +42,7 @@ type Response = {
 \* The filter parameter is available only if the authenticated user is a
 moderator or an admin.
 
-#### Possible errors
+### Possible errors
 
 | HTTP Status Code | [APIError](/errors) code |
 | ---------------- | ------------------------ |
@@ -48,3 +50,23 @@ moderator or an admin.
 | 400              | invalid_cursor           |
 | 400              | invalid_limit            |
 | 400              | invalid_filter           |
+
+## POST
+
+Creates a post object and returns it.
+
+Request must have the following JSON body:
+
+```ts
+type Request = {
+  // Post type. Default is "text".
+  type: "text" | "image" | "link";
+
+  title: string; // Required
+  body: string;
+  community: string; // Name of community, required
+  url: string; // Only valid for link-posts
+};
+```
+
+If successful, a newly created post is returned.

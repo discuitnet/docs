@@ -1,10 +1,12 @@
 ---
-title: "communities [GET]"
+title: "communities"
 ---
+
+## GET
 
 Returns an array of Community objects.
 
-#### Query parameters
+### Query parameters
 
 | Name           | Description                            |
 | -------------- | -------------------------------------- |

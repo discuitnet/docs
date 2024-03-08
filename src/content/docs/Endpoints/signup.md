@@ -1,6 +1,8 @@
 ---
-title: "_signup [POST]"
+title: "_signup"
 ---
+
+## POST
 
 Requests must have the following JSON body:
 
@@ -23,7 +25,7 @@ type Response = User | APIError;
 
 Upon successful signup, the user is logged in automatically in the current session, so there's no need to call [`/api/_login`](/endpoints/login-post) again.
 
-## Possible errors
+### Possible errors
 
 | HTTP status code | [APIError](/errors) code |
 | ---------------- | ------------------------ |

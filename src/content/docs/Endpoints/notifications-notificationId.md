@@ -1,6 +1,14 @@
 ---
-title: "notifications/{notificationID} [GET, PUT]"
+title: "notifications/{notificationID}"
 ---
+
+## DELETE
+
+```ts
+type Response = Notification;
+```
+
+## GET, PUT
 
 ```ts
 // PUT

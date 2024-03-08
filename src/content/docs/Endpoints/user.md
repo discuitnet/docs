@@ -1,6 +1,8 @@
 ---
-title: "_user [GET]"
+title: "_user"
 ---
+
+## GET
 
 Returns the logged in user. If not, a 401 error.
 

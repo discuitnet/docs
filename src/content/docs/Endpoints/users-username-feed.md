@@ -1,19 +1,21 @@
 ---
-title: "users/{username}/feed [GET]"
+title: "users/{username}/feed"
 ---
+
+## GET
 
 Returns the feed items of a user. The result sets are cursor paginated.
 
 Feeds of banned users can only be viewed by admins. For anyone else, a 403 error is returned.
 
-## Query parameters
+### Query parameters
 
 | Name    | Description                                                 |
 | ------- | ----------------------------------------------------------- |
 | `next`  | The pagination cursor. If null, there's no next result set. |
 | `limit` | The max number of items in a result set.                    |
 
-## Possible errors
+### Possible errors
 
 | HTTP status code | [APIError](/errors) code |
 | ---------------- | ------------------------ |

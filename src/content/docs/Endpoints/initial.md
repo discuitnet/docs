@@ -1,6 +1,8 @@
 ---
-title: "_initial [GET]"
+title: "_initial"
 ---
+
+## GET
 
 JSON response:
 

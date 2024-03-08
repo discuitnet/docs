@@ -1,6 +1,8 @@
 ---
-title: "_joinCommunity [POST]"
+title: "_joinCommunity"
 ---
+
+## POST
 
 Make the authenticated user join or leave a community.
 

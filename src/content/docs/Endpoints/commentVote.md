@@ -1,6 +1,8 @@
 ---
-title: "_commentVote [POST]"
+title: "_commentVote"
 ---
+
+## POST
 
 Requests must have the following JSON body:
 
