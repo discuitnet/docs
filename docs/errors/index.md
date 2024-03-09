@@ -6,7 +6,7 @@ Most API errors return a JSON object of the following type, along with the appro
 type APIError = {
   status: int; // HTTP status code
   code?: string; // Custom error code
-  message: message; // Human readable error message (could be an empty string)
+  message: string; // Human readable error message (could be an empty string)
 };
 ```
 
