@@ -166,6 +166,14 @@ export default defineConfig({
             link: "/errors/400-bad-request",
           },
           {
+            text: "404 - Not found",
+            link: "/errors/404-not-found",
+          },
+          {
+            text: "429 - Too many requests",
+            link: "/errors/429-too-many-requests",
+          },
+          {
             text: "500 - Internal server error",
             link: "/errors/500-internal-server-error",
           },

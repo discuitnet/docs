@@ -1,6 +1,4 @@
----
-title: Authentication
----
+# Authentication
 
 The Discuit API uses [HTTP
 Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) for
