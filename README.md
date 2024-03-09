@@ -27,4 +27,4 @@ This repository has the code for the Discuit documentation website. The website 
     npm run build
     ```
 
-    This will place all of the built files in `dist/`.
+    This will place all of the built files in `docs/.vitepress/dist/`.
