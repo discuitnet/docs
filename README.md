@@ -1,6 +1,6 @@
 # Discuit Documentation
 
-This repository has the code for the Discuit documentation website. The website is made using [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
+This repository has the code for the Discuit documentation website. The website is made using [VitePress](https://vitepress.dev).
 
 ## Build Instructions
 
@@ -19,7 +19,7 @@ This repository has the code for the Discuit documentation website. The website 
     npm run dev
     ```
 
-    This will start a development server at http://localhost:4321.
+    This will start a development server at http://localhost:5173.
 
 3.  Build the project.
 
