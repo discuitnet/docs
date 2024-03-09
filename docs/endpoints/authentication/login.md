@@ -13,7 +13,7 @@ type Request = {
 
 If the username and password matches, the user object is returned. Otherwise, a 401 (unauthorized) error is returned.
 
-If the user account is suspended, a 403 (forbidden) status is returned with an [APIError](/errors) code `"account_suspended"`.
+If the user account is suspended, a 403 (forbidden) status is returned with an [APIError](/errors/) code `"account_suspended"`.
 
 ```ts
 type Response = User | APIError;

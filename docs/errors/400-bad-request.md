@@ -38,7 +38,7 @@
 
 - `invalid_http_method` - Unsupported HTTP method.
 
-  The HTTP method by which the request was sent is incorrect. Check the documentation for the [endpoint](/endpoints) to ensure that you have the correct HTTP method.
+  The HTTP method by which the request was sent is incorrect. Check the documentation for the [endpoint](/endpoints/) to ensure that you have the correct HTTP method.
 
 - `invalid_id` - Invalid ID.
 
@@ -50,7 +50,7 @@
 
 - `invalid_json` - Invalid JSON body.
 
-  The JSON body being sent is incorrect. Check the documentation for the [endpoint](/endpoints) you're sending to, as well as the [type](/types) for the data you're sending.
+  The JSON body being sent is incorrect. Check the documentation for the [endpoint](/endpoints/) you're sending to, as well as the [type](/types) for the data you're sending.
 
 - `invalid_mute_type` - Invalid mute type.
 

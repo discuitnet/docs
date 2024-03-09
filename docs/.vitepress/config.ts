@@ -190,4 +190,8 @@ export default defineConfig({
     },
     externalLinkIcon: true,
   },
+  lastUpdated: true,
+  sitemap: {
+    hostname: "https://docs.discuit.net",
+  },
 });

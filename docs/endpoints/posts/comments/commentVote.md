@@ -11,4 +11,4 @@ type Request = {
 };
 ```
 
-This endpoint is identical to [`/api/_postVote`](/endpoints/postvote-post).
+This endpoint is identical to [`/_postVote`](/endpoints/posts/postVote).

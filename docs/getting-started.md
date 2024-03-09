@@ -8,5 +8,5 @@ Base URL: `https://discuit.net/api/`
 
 - [Authentication](/authentication)
 - [Types](/types)
-- [Errors](/errors)
-- [Endpoints](/endpoints)
+- [Errors](/errors/)
+- [Endpoints](/endpoints/)

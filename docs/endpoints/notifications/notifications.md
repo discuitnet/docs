@@ -38,7 +38,7 @@ Example queries:
 - `?action=markAllAsSeen`
 - `?action=markAllAsSeen&type=new_comment`
 
-If the query is unsuccessful, an [APIError](/errors) is returned. Otherwise, the response is of the type:
+If the query is unsuccessful, an [APIError](/errors/) is returned. Otherwise, the response is of the type:
 
 ```ts
 type Response = {

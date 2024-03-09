@@ -1,6 +1,4 @@
----
-title: "posts/{postID}/comments/{commentId}"
----
+# /posts/{postID}/comments/{commentId}
 
 ## DELETE
 

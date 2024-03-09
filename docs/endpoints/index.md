@@ -10,40 +10,40 @@
 
 ## Communities
 
-- [`/_joinCommunity`](/endpoints/joinCommunity)
+- [`/_joinCommunity`](/endpoints/communities/joinCommunity)
 - [`/communities`](/endpoints/communities/communities)
-- [`/communities/{communityId}`](/endpoints/communities/communities-communityId/)
+- [`/communities/{communityId}`](/endpoints/communities/communities-communityId)
 
 ### Mods
 
-- [`/communities/{communityId}/mods`](/endpoints/communities/communities-communityId-mods/)
-- [`/communities/{communityId}/mods/{mod}`](/endpoints/communities/communities-communityId-mods-mod)
+- [`/communities/{communityId}/mods`](/endpoints/communities/mods/mods)
+- [`/communities/{communityId}/mods/{mod}`](/endpoints/communities/mods/mods-mod)
 
 ### Rules
 
-- [`/communities/{communityId}/rules`](/endpoints/communities/communities-communityId-rules/)
-- [`/communities/{communityId}/rules/{ruleId}`](/endpoints/communities/communities-communityId-rules-ruleId)
+- [`/communities/{communityId}/rules`](/endpoints/communities/rules/rules)
+- [`/communities/{communityId}/rules/{ruleId}`](/endpoints/communities/rules/rules-ruleId)
 
 ## Notifications
 
-- [`/notifications`](/endpoints/notifications/)
-- [`/notifications/{notificationId}`](/endpoints/notifications/notificationId)
+- [`/notifications`](/endpoints/notifications/notifications)
+- [`/notifications/{notificationId}`](/endpoints/notifications/notifications-notificationId)
 
 ## Posts
 
-- [`/_postVote`](/endpoints/postVote)
-- [`/posts`](/endpoints/posts/)
-- [`/posts/{postId}`](/endpoints/posts/postId)
+- [`/_postVote`](/endpoints/posts/postVote)
+- [`/posts`](/endpoints/posts/posts)
+- [`/posts/{postId}`](/endpoints/posts/posts-postId)
 
 ### Comments
 
-- [`/_commentVote`](/endpoints/commentVote)
-- [`/posts/{postId}/comments`](/endpoints/posts-postId-comments)
-- [`/posts/{postId}/comments/{commentId}`](/endpoints/posts-postId-comments-commentId)
+- [`/_commentVote`](/endpoints/posts/comments/commentVote)
+- [`/posts/{postId}/comments`](/endpoints/posts/comments/comments)
+- [`/posts/{postId}/comments/{commentId}`](/endpoints/posts/comments/comments-commentId)
 
 ## Users
 
-- [`/_settings`](/endpoints/settings)
-- [`/_user`](/endpoints/user)
-- [`/users/{username}`](/endpoints/users-username)
-- [`/users/{username}/feed`](/endpoints/users-username-feed)
+- [`/_settings`](/endpoints/users/settings)
+- [`/_user`](/endpoints/users/user)
+- [`/users/{username}`](/endpoints/users/users-username)
+- [`/users/{username}/feed`](/endpoints/users/users-username-feed)

@@ -42,12 +42,12 @@ moderator or an admin.
 
 ### Possible errors
 
-| HTTP Status Code | [APIError](/errors) code |
-| ---------------- | ------------------------ |
-| 403              | not_admin                |
-| 400              | invalid_cursor           |
-| 400              | invalid_limit            |
-| 400              | invalid_filter           |
+| HTTP Status Code | [APIError](/errors/) code |
+| ---------------- | ------------------------- |
+| 403              | not_admin                 |
+| 400              | invalid_cursor            |
+| 400              | invalid_limit             |
+| 400              | invalid_filter            |
 
 ## POST
 

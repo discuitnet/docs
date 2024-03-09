@@ -42,7 +42,7 @@ Post body or title is not updated on requests with an `action=` query parameter.
 
 ### Possible errors
 
-| HTTP Status Code | [APIError](/errors) code |
-| ---------------- | ------------------------ |
-| 403              | `not_admin`              |
-| 403              | `not_mod`                |
+| HTTP Status Code | [APIError](/errors/) code |
+| ---------------- | ------------------------- |
+| 403              | `not_admin`               |
+| 403              | `not_mod`                 |
