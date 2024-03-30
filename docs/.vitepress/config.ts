@@ -197,6 +197,9 @@ export default defineConfig({
       pattern: "https://github.com/discuitnet/docs/edit/main/docs/:path",
     },
     externalLinkIcon: true,
+    search: {
+      provider: "local",
+    },
   },
   lastUpdated: true,
   sitemap: {
