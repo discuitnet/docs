@@ -22,7 +22,7 @@ type Response = {
   // The list of communities that the authenticated user is banned from. If
   // not authenticated, this value is null.
   bannedFrom: string[] | null;
-  vapidPublicKey: string;
+  validPublicKey: string;
   mutes: {
     communityMutes: Mute[];
     userMutes: Mute[];
