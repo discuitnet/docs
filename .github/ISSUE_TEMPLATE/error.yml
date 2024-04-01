@@ -1,0 +1,28 @@
+name: Error
+description: There's a problem in the content.
+title: "[ERROR] "
+labels:
+  - "error"
+body:
+  - type: textarea
+    attributes:
+      label: Where is the error?
+      description: Provide a link directly to the error.
+      placeholder: Be as precise as you can, as this helps us find and fix the error more quickly.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Correction
+      description: What should the correct information be instead of the error?
+      placeholder: If you don't have any suggestions, you may leave this blank.
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: Would you like to work on this?
+      options:
+        - label: I would like to work on this.
+          required: false

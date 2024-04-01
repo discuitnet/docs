@@ -1,0 +1,38 @@
+name: Bug report
+description: There's a bug in the website.
+title: "[BUG] "
+labels:
+  - "bug"
+body:
+  - type: textarea
+    attributes:
+      label: Where is the bug?
+      description: Which page, section, or line can I find the bug in? The more precise you are, the better.
+      placeholder: Make sure your browser and OS are on the latest version, and **provide screenshots**.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Environment
+      description: |
+        What OS and browser are you using? Examples:
+        - OS: Windows 11, macOS Sonoma, Android 14, iOS 17, Fedora 39
+      value: |
+        **OS**:
+        **Browser**:
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Suggested fix
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: Would you like to work on this?
+      options:
+        - label: I would like to work on this.
+          required: false
