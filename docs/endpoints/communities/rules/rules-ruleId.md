@@ -1,4 +1,4 @@
-# communities/{communityID}/rules/\{ruleId}
+# communities/{communityId}/rules/\{ruleId}
 
 ## DELETE
 

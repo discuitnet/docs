@@ -1,4 +1,4 @@
-# /notifications/\{notificationID}
+# /notifications/\{notificationId}
 
 ## DELETE
 

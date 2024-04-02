@@ -1,4 +1,4 @@
-# /posts/{postID}/comments/\{commentId\}
+# /posts/{postId}/comments/\{commentId\}
 
 ## DELETE
 
