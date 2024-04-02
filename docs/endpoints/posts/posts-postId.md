@@ -1,4 +1,4 @@
-# /posts/{postId}
+# /posts/\{postId\}
 
 ## DELETE
 

@@ -1,4 +1,4 @@
-# /users/{username}
+# /users/\{username\}
 
 ## GET
 

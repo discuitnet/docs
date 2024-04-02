@@ -1,4 +1,4 @@
-# posts/{postId}/comments
+# /posts/{postId}/comments
 
 ## GET
 
