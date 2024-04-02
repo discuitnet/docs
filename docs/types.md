@@ -22,8 +22,7 @@ type Comment = {
   noReplies: int; // Total number of replies
   noDirectReplies: int; // Number of direct replies
 
-  // Comment IDs of all direct ancestor comments starting from the top-most
-  // comment.
+  // Comment IDs of all ancestor comments starting from the top-most comment.
   ancestors: string[] | null;
 
   body: string; // Comment body
@@ -39,8 +38,7 @@ type Comment = {
   // In what capacity the comment was deleted.
   deletedAs: "normal" | "admins" | "mods" | null;
 
-  // Indicated whether the authenticated user has voted. If not authenticated,
-  // the value is null.
+  // Indicated whether the authenticated user has voted. If not authenticated, the value is null.
   userVoted: boolean | null;
   userVotedUp: boolean; // Indicates whether the authenticated user's vote is an upvote
 
@@ -174,8 +172,7 @@ type Post = {
   createdAt: time;
   editedAt: time | null; // Last edited time.
 
-  // Either the post created time or, if there are comments on the post, the
-  // time the most recent comment was created at.
+  // Either the post created time or, if there are comments on the post, the time the most recent comment was created at.
   lastActivityAt: time;
 
   deleted: boolean;
@@ -183,8 +180,7 @@ type Post = {
   deletedBy: string | null; // ID of the user who deleted the post.
   deletedAs: "normal" | "admins" | "mods" | null;
 
-  // If true, the body of the post and all associated links or images are
-  // deleted.
+  // If true, the body of the post and all associated links or images are deleted.
   deletedContent: boolean;
 
   deletedContentAs: "normal" | "admins" | "mods" | null;
@@ -194,8 +190,7 @@ type Post = {
   commments?: Comment[]; // Comments of the post.
   commentsNext: string | null; // Pagination cursor.
 
-  // Indicated whether the authenticated user has voted. If not authenticated,
-  // the value is null.
+  // Indicated whether the authenticated user has voted. If not authenticated, the value is null.
   userVoted: boolean | null;
   userVotedUp: boolean; // Indicates whether the authenticated user's vote is an upvote.
 
