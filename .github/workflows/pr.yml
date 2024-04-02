@@ -53,6 +53,5 @@ jobs:
             | ------------------ | ----------------------------------------- |
             | Latest commit      | ${{ github.event.pull_request.head.sha }} |
             | Preview URL        | ${{ steps.cloudflare.outputs.url }}       |
-            | Branch preview URL | ${{ steps.cloudflare.outputs.alias }}     |
 
           comment_tag: deployment
