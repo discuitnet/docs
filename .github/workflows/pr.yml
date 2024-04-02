@@ -61,3 +61,5 @@ jobs:
             | Latest commit      | ${{ github.event.pull_request.head.sha }} |
             | Preview URL        | ${{ env.url }}                            |
             | Branch preview URL | ${{ env.alias }}                          |
+
+          comment_tag: deployment
