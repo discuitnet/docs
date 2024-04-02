@@ -13,7 +13,8 @@ jobs:
     permissions:
       contents: read
       deployments: write
-    name: Deploy to Cloudflare Pages
+      pull-requests: write
+    name: Deploy PR to Cloudflare Pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,6 +34,7 @@ jobs:
       - name: Build with VitePress
         run: bun run build
       - name: Publish
+        id: cloudflare
         uses: cloudflare/pages-action@1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -40,16 +42,7 @@ jobs:
           projectName: discuit-docs-pr
           directory: docs/.vitepress/dist
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-
-  comment:
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-    needs: deploy
-    env:
-      url: ${{ needs.deploy.outputs.url }}
-      alias: ${{ needs.deploy.outputs.alias }}
-    steps:
+          wranglerVersion: "3"
       - name: Comment
         uses: thollander/actions-comment-pull-request@v2
         with:
@@ -59,5 +52,6 @@ jobs:
             | Name               | Link                                      |
             | ------------------ | ----------------------------------------- |
             | Latest commit      | ${{ github.event.pull_request.head.sha }} |
-            | Preview URL        | ${{ env.url }}                            |
-            | Branch preview URL | ${{ env.alias }}                          |
+            | Preview URL        | ${{ steps.cloudflare.outputs.url }}       |
+
+          comment_tag: deployment
