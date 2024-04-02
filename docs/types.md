@@ -145,7 +145,7 @@ type Post = {
   username: string; // Username of the author.
 
   // In what capacity the post was created.
-  // For "speaking officialy" as a mod or an admin.
+  // For "speaking officially" as a mod or an admin.
   userGroup: "normal" | "admins" | "mods";
 
   userDeleted: boolean; // Indicated whether the author's account is deleted
