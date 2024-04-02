@@ -1,0 +1,63 @@
+name: Deploy VitePress site to Cloudflare Pages
+on:
+  # Runs on pull requests.
+  pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # Build job
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Not needed if lastUpdated is not enabled
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Install dependencies
+        run: bun install
+      - name: Build with VitePress
+        run: bun run build
+      - name: Publish
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: discuit-docs-pr
+          directory: docs/.vitepress/dist
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+  comment:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    needs: deploy
+    env:
+      url: ${{ needs.deploy.outputs.url }}
+      alias: ${{ needs.deploy.outputs.alias }}
+    steps:
+      - name: Comment
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            ### Your deployment preview is ready!
+
+            | Name               | Link                                      |
+            | ------------------ | ----------------------------------------- |
+            | Latest commit      | ${{ github.event.pull_request.head.sha }} |
+            | Preview URL        | ${{ env.url }}                            |
+            | Branch preview URL | ${{ env.alias }}                          |
