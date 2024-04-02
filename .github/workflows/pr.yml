@@ -40,6 +40,7 @@ jobs:
           projectName: discuit-docs-pr
           directory: docs/.vitepress/dist
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: "3"
 
   comment:
     runs-on: ubuntu-latest
