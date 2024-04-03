@@ -13,6 +13,8 @@ type Response = {
 };
 ```
 
+The `comments` and `commentsNext` values of the [Post](/types#post) object will be null when returned from this endpoint. In order to get those values, use the [`/posts/${postId}`](/endpoints/posts/posts-postId) endpoint with the `publicId` of the specific post you would like to see comments for.
+
 If the query parameter `filter` is set and it's not `all`, the request is only allowed for moderators and admins. And these result sets are page-paginated rather than cursor-paginated.
 
 Response for moderator feeds (for a request like `/api/posts?communityId=17692e122def73f25bd757e0&filter=deleted`):

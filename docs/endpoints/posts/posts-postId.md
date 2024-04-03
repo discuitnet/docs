@@ -1,5 +1,7 @@
 # /posts/\{postId\}
 
+The `postId` being used here is the `publicId` of the [Post](/types#post) object.
+
 ## DELETE
 
 Deletes a post. Returns the deleted post.
