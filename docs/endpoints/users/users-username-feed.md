@@ -4,7 +4,7 @@
 
 Returns the feed items of a user. The result sets are cursor paginated.
 
-Feeds of banned users can only be viewed by admins. For anyone else, a 403 error is returned.
+Feeds of banned users can only be viewed by admins.
 
 ### Query parameters
 
