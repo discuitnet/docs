@@ -2,11 +2,11 @@
 
 ## GET
 
+Returns an array of Community objects.
+
 ::: info
 This endpoint provides a summary view of Community objects, ideal for listing multiple communities such as on a homepage or in search results. Detailed attributes like moderators, rules, and report details may be omitted in this summary view.
 :::
-
-Returns an array of Community objects.
 
 ### Query parameters
 
