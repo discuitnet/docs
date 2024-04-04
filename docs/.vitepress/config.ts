@@ -6,6 +6,7 @@ export default defineConfig({
   description: "The documentation for Discuit's API",
   lang: "en-US",
   cleanUrls: true,
+  head: [["link", { rel: "icon", href: "/favicon.png" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: "/favicon.png",
