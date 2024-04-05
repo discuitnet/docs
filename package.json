@@ -2,6 +2,7 @@
   "name": "discuit-docs",
   "type": "module",
   "devDependencies": {
+    "markdown-it-footnote": "^4.0.0",
     "vitepress": "^1.0.2"
   },
   "scripts": {
