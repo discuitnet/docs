@@ -2,7 +2,7 @@
 
 ## GET
 
-Returns a paginated list of comments. The `postId` in the URL is the `publicId` of the post.
+Returns a paginated list of [Comment](/types#comment) objects. The `postId` in the URL is the `publicId` of the post.
 
 Response:
 
@@ -31,7 +31,7 @@ type Request = {
 };
 ```
 
-Returns the added comment.
+Returns the added [Comment](/types#comment) object.
 
 ### Query parameters
 

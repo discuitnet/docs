@@ -2,7 +2,7 @@
 
 ## GET
 
-Returns a Community object.
+Returns a [Community](/types#community) object.
 
 If the query parameter `byName=true` is present, `communityId` in the request URL is treated as the name of the community instead of its ID.
 

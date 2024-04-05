@@ -2,7 +2,7 @@
 
 ## GET
 
-Returns an array of User objects. The response could be null.
+Returns an array of [User](/types#user) objects. The response could be null.
 
 ## POST
 
@@ -18,4 +18,4 @@ type Request = {
 };
 ```
 
-Returns an array of User objects.
+Returns an array of [User](/types#user) objects.

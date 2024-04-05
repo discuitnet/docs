@@ -4,7 +4,7 @@ The `postId` being used here is the `publicId` of the [Post](/types#post) object
 
 ## DELETE
 
-Deletes a post. Returns the deleted post.
+Deletes a post. Returns the deleted [Post](/types#post) object.
 
 ### Query Parameters
 
@@ -17,7 +17,7 @@ Deletes a post. Returns the deleted post.
 
 ## GET
 
-Returns a post object.
+Returns a [Post](/types#post) object.
 
 If the query parameter `fetchCommunity` is set to `true`, `post.community` field is populated (otherwise it's null).
 

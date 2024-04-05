@@ -53,7 +53,7 @@ moderator or an admin.
 
 ## POST
 
-Creates a post object and returns it.
+Creates a [Post](/types#post) object and returns it.
 
 Request must have the following JSON body:
 

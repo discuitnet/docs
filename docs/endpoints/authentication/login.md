@@ -11,7 +11,7 @@ type Request = {
 };
 ```
 
-If the username and password matches, the user object is returned. Otherwise, a 401 (unauthorized) error is returned.
+If the username and password matches, the [User](/types#user) object is returned. Otherwise, a 401 (unauthorized) error is returned.
 
 If the user account is suspended, a 403 (forbidden) status is returned with an [APIError](/errors/) code `"account_suspended"`.
 

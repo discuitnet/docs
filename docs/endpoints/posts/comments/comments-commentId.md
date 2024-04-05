@@ -12,7 +12,7 @@ Deletes a comment and returns it.
 
 ## PUT
 
-Updates a comment and returns the updated comment.
+Updates a comment and returns the updated [Comment](/types#comment) object.
 
 Requests may have the following JSON body:
 

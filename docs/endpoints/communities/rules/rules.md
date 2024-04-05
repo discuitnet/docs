@@ -2,7 +2,7 @@
 
 ## GET
 
-Returns an array of community rules.
+Returns an array of [CommunityRule](/types#communityrule) objects.
 
 ## POST
 

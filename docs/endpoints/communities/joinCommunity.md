@@ -13,4 +13,4 @@ type Request = {
 };
 ```
 
-Returns a Community object.
+Returns a [Community](/types#community) object.
