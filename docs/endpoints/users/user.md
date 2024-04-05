@@ -2,7 +2,7 @@
 
 ## GET
 
-Returns the logged in user. If not, a 401 error.
+Returns the logged in [User](/types#user). If not, a 401 error.
 
 ```ts
 type Response = User | APIError;

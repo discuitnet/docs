@@ -4,20 +4,20 @@ The `postId` being used here is the `publicId` of the [Post](/types#post) object
 
 ## DELETE
 
-Deletes a post. Returns the deleted post.
+Deletes a post. Returns the deleted [Post](/types#post) object.
 
 ### Query Parameters
 
 | Name          | Description                                                          |
 | ------------- | -------------------------------------------------------------------- |
 | deleteAs      | One of: `normal`, `mods`, `admins`. With `normal` being the default. |
-| deleteContent | Boolean. If `true`, the body of the post is also deleted.\*          |
+| deleteContent | Boolean. If `true`, the body of the post is also deleted.[^1]        |
 
-\* For link-posts this is the link. For text post this is the text. For image posts these are the image(s).
+[^1]: For link-posts this is the link. For text post this is the text. For image posts these are the image(s).
 
 ## GET
 
-Returns a post object.
+Returns a [Post](/types#post) object.
 
 If the query parameter `fetchCommunity` is set to `true`, `post.community` field is populated (otherwise it's null).
 

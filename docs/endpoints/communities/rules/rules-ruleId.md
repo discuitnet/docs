@@ -18,4 +18,4 @@ type Request = {
 };
 ```
 
-Returns a community rule object.
+Returns a [CommunityRule](/types#communityrule) object.

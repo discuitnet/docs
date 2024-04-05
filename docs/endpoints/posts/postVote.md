@@ -2,7 +2,7 @@
 
 ## POST
 
-Votes a post up or down and returns the post. If already voted, then changes the vote.
+Votes a post up or down and returns the [Post](/types#post) object. If already voted, then changes the vote.
 
 Request must have the following JSON body:
 
