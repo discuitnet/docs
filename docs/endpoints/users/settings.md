@@ -8,15 +8,21 @@ The `/_settings` endpoint allows users to update their profile settings and chan
 
 The `POST` method is used to update user settings and change passwords.
 
-### Global Response Codes
+::: warning
+You must pass the entire object when updating settings. If you only pass a single field, the other fields will be reset to their default values.
+:::
+
+### HTTP Response Codes
 
 These are common HTTP status codes applicable to all requests made to this endpoint:
 
-- `200` OK: Returns the updated user object.
-- `400` Bad Request: The server cannot process the request due to a client error (e.g., malformed request syntax).
-- `401` Unauthorized: Authentication is required and has failed or has not been provided.
-- `429` Too Many Requests: The user has sent too many requests in a given amount of time ("rate limiting").
-- `500` Internal Server Error: The server has encountered a situation it doesn't know how to handle. If this error occurs, please create an issue on [GitHub](https://github.com/discuitnet/discuit).
+| Status Code | Description | Details |
+| --- | --- | --- |
+| 200 | OK | Returns the updated [User](/types#user) object. |
+| 400 | Bad Request | The server cannot process the request due to a client error (e.g., malformed request syntax). |
+| 401 | Unauthorized | Authentication is required and has failed or has not been provided. |
+| 429 | Too Many Requests | The user has sent too many requests in a given amount of time ("rate limiting"). |
+| 500 | Internal Server Error | The server has encountered a situation it doesn't know how to handle. If this error occurs, please create an issue on [GitHub](https://github.com/discuitnet/discuit). |
 
 ### Update Profile
 
@@ -24,16 +30,16 @@ Allows users to update various settings related to their profile. For this reque
 
 #### Request Body
 
-```json
-{
-  "aboutMe": "string",
-  "upvoteNotificationsOff": "boolean",
-  "replyNotificationsOff": "boolean",
-  "homeFeed": ["All", "Subscriptions"],
-  "rememberFeedSort": "boolean",
-  "embedsOff": "boolean",
-  "email": "string",
-  "hideUserProfilePictures": "boolean"
+```ts
+type Request = {
+  aboutMe: string;
+  upvoteNotificationsOff: boolean;
+  replyNotificationsOff: boolean;
+  homeFeed: "All" | "Subscriptions";
+  rememberFeedSort: boolean;
+  embedsOff: boolean;
+  email: string;
+  hideUserProfilePictures: boolean;
 }
 ```
 
@@ -43,10 +49,10 @@ Enables users to change their account password.  For this request you must set `
 
 #### Request Body
 
-```json
-{
-  "password": "string",
-  "newPassword": "string",
-  "repeatPassword": "string"
+```ts
+type Request = {
+  password: string;
+  newPassword: string;
+  repeatPassword: string;
 }
 ```
