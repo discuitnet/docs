@@ -28,8 +28,6 @@ These are common HTTP status codes applicable to all requests made to this endpo
 
 Allows users to update various settings related to their profile. For this request you must set `?action=updateProfile` in the URL.
 
-#### Request Body
-
 ```ts
 type Request = {
   aboutMe: string;
@@ -46,8 +44,6 @@ type Request = {
 ### Change Password
 
 Enables users to change their account password.  For this request you must set `?action=changePassword` in the URL.
-
-#### Request Body
 
 ```ts
 type Request = {
