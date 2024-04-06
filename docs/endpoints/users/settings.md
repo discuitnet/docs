@@ -20,7 +20,7 @@ These are common HTTP status codes applicable to all requests made to this endpo
 
 ### Update Profile
 
-Allows users to update various settings related to their profile.
+Allows users to update various settings related to their profile. For this request you must set `?action=updateProfile` in the URL.
 
 #### Request Body
 
@@ -39,7 +39,7 @@ Allows users to update various settings related to their profile.
 
 ### Change Password
 
-Enables users to change their account password.
+Enables users to change their account password.  For this request you must set `?action=changePassword` in the URL.
 
 #### Request Body
 
