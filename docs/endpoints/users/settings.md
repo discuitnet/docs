@@ -1,4 +1,4 @@
-# API Endpoint: /\_settings
+# /\_settings
 
 ## Overview
 
