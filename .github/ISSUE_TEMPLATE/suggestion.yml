@@ -6,7 +6,7 @@ labels:
 body:
   - type: markdown
     attributes:
-      value: Please read the [contributing guidelines](./.github/CONTRIBUTING.md) before contributing.
+      value: Please read the [contributing guidelines](https://github.com/discuitnet/docs/blob/main/.github/CONTRIBUTING.md) before contributing.
 
   - type: checkboxes
     attributes:
