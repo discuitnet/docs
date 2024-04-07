@@ -1,8 +1,6 @@
 # Authentication
 
-The Discuit API uses [HTTP
-Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) for
-authentication.
+The Discuit API uses [HTTP Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) for authentication.
 
 The first call to any GET API endpoint (that does not require authentication) returns the cookies that are needed for authenticated API requests, namely, the session ID (`SID`) cookie and the `csrftoken` cookie. However, it is recommended to use the [`/_initial`](/endpoints/initial) endpoint for this.
 
@@ -14,7 +12,7 @@ curl 'https://discuit.net/api/_initial' -XGET -I
 
 would return these HTTP headers:
 
-```
+```bash
 cache-control: no-store
 content-type: application/json; charset=UTF-8
 csrf-token: FcVgW9FZD8w3iptTeh-Nm3cWm4QjVXYulKjqMWjSJkg=
@@ -28,8 +26,27 @@ The value in the `csrftoken` cookie needs to be passed in an `X-Csrf-Token` HTTP
 A login request, for example, would look like this:
 
 ```bash
-curl 'http://discuit.net/api/_login' -XPOST \
+curl -X POST 'https://discuit.net/api/_login' \
 -H 'Cookie: SID=GyzghHpzr3vOdUG2pOoEeqRBFKwbVWBw5Ovy' \
 -H 'X-Csrf-Token: FcVgW9FZD8w3iptTeh-Nm3cWm4QjVXYulKjqMWjSJkg=' \
 -d '{"username":"neo","password":"whatever"}'
+```
+
+
+Note: If you are going to use an `.env` file, make sure to escape your quotation marks for proper variable expansion:
+
+`.env` file:  
+
+```ini
+MY_USERNAME=discuit
+MY_PASSWORD=This is a mysterious password!
+```
+
+curl command:  
+
+```bash
+curl -X POST 'https://discuit.net/api/_login' \
+-H 'Cookie: SID=GyzghHpzr3vOdUG2pOoEeqRBFKwbVWBw5Ovy' \
+-H 'X-Csrf-Token: FcVgW9FZD8w3iptTeh-Nm3cWm4QjVXYulKjqMWjSJkg=' \
+-d '{"username":"'"$MY_USERNAME"'","password":"'"$MY_PASSWORD"'"}'
 ```
