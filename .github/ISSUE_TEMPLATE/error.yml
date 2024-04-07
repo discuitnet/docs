@@ -4,10 +4,13 @@ title: "[ERROR] "
 labels:
   - "error"
 body:
+  - type: markdown
+    attributes:
+      value: Please read the [contributing guidelines](./.github/CONTRIBUTING.md) before contributing.
+
   - type: checkboxes
     attributes:
-      label: Have you read the [contributing guidelines](./.github/CONTRIBUTING.md)?
-      description: Please read the contributing guidelines before contributing.
+      label: Have you read the contributing guidelines?
       options:
         - label: I have read the contributing guidelines.
           required: true
