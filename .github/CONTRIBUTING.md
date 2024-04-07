@@ -16,13 +16,13 @@ There are different types of issues you can open, meant for different purposes. 
 
 This type of issue is related to any bugs you find in the website, such as a rendering issue or a certain element or font not displaying properly. If you've found a bug in the website, let us know what and where it is. A screenshot would be helpful too. Before you do submit the issue, make sure that you're using the latest versions of both your OS and browser, and test that the bug shows up even after updating. This would seriously help clearing up unnecessary issues that shouldn't have been opened in the first place, and would save time.
 
-This type of issue is not meant for errors in the content, please refer to [Error](#error) for that.
-
 #### Error
 
 This type of issue is related to any errors you find in the content. This can include links not working, an incorrect piece of information that may have slipped in (We make mistakes sometimes!), clearer wording, or any other improvements that you think would improve the quality of the content.
 
-This type of issue is not meant for other types of bugs outside of the content, please refer to [Bug](#bug) for that.
+#### Suggestion
+
+This type of issue is to make any suggestions for content to be added. This can range from a small section on one of the existing pages, for instance to enhance the quality of the content, to adding new pages or sections.
 
 ## Pull Requests (PRs)
 

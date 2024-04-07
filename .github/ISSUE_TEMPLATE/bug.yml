@@ -4,6 +4,14 @@ title: "[BUG] "
 labels:
   - "bug"
 body:
+  - type: checkboxes
+    attributes:
+      label: Have you read the [contributing guidelines](./.github/CONTRIBUTING.md)?
+      description: Please read the contributing guidelines before contributing.
+      options:
+        - label: I have read the contributing guidelines.
+          required: true
+
   - type: textarea
     attributes:
       label: Where is the bug?
