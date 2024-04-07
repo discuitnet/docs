@@ -28,7 +28,7 @@ The value in the `csrftoken` cookie needs to be passed in an `X-Csrf-Token` HTTP
 A login request, for example, would look like this:
 
 ```bash
-curl 'http://discuit.net/api/_login' -XPOST \
+curl 'https://discuit.net/api/_login' -XPOST \
 -H 'Cookie: SID=GyzghHpzr3vOdUG2pOoEeqRBFKwbVWBw5Ovy' \
 -H 'X-Csrf-Token: FcVgW9FZD8w3iptTeh-Nm3cWm4QjVXYulKjqMWjSJkg=' \
 -d '{"username":"neo","password":"whatever"}'
