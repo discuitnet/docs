@@ -137,8 +137,8 @@ type Notification = {
 
 ```ts
 type Post = {
-  id: string;
-  type: "text" | "image" | "link";
+  id: string; // The ID of the post
+  type: "text" | "image" | "link"; // The type of post
 
   // The value in https://discuit.net/gaming/post/{publicId}
   publicId: string;
@@ -168,44 +168,47 @@ type Post = {
 
   link: PostLink | undefined; // The posted link (only valid for link posts, undefined otherwise)
 
-  locked: boolean;
+  locked: boolean; // If the post was deleted
   lockedBy: string | null; // Who locked the post.
+  // In what capacity the post was locked, undefined if the post is not locked
   lockedByGroup: "owner" | "admins" | "mods" | undefined;
-  lockedAt: time | null;
+  lockedAt: time | null; // Time at which the post was locked, null if the post is not locked
 
-  upvotes: int;
-  downvotes: int;
+  upvotes: int; // The number of upvotes the post has
+  downvotes: int; // The number of downvotes the post has
   hotness: int; // For ordering posts by 'hot'
 
-  createdAt: time;
+  createdAt: time; // The time when the post was created
   editedAt: time | null; // Last edited time.
 
   // Either the post created time or, if there are comments on the post, the time the most recent comment was created at.
   lastActivityAt: time;
 
-  deleted: boolean;
-  deletedAt: time | null;
+  deleted: boolean; // If the post was deleted
+  deletedAt: time | null; // Time at which the post was deleted, null if the post has not been deleted
   deletedBy: string | null; // ID of the user who deleted the post.
   deletedAs: "normal" | "admins" | "mods" | undefined;
 
   // If true, the body of the post and all associated links or images are deleted.
   deletedContent: boolean;
+  // In what capacity the content was deleted, undefined if the content has not been deleted.
   deletedContentAs: "normal" | "admins" | "mods" | undefined;
 
-  noComments: int; // Comment count
+  noComments: int; // Comment count.
 
   commments: Comment[] | undefined; // Comments of the post.
-  commentsNext: string | null; // Pagination cursor.
+  commentsNext: string | null; // Pagination cursor for comments.
 
   // Indicated whether the authenticated user has voted. If not authenticated, the value is null.
   userVoted: boolean | null;
   userVotedUp: boolean | null; // Indicates whether the authenticated user's vote is an upvote.
 
-  isAuthorMuted: boolean;
-  isCommunityMuted: boolean;
+  // Both of these are false if the user has not been logged in.
+  isAuthorMuted: boolean; // If the author of the post has been muted by the logged in user.
+  isCommunityMuted: boolean; // If the community that the post is in has been muted by the logged in user.
 
-  community: Community | undefined;
-  author: User | undefined;
+  community: Community | undefined; // The Community object of the community that the post is in.
+  author: User | undefined; // The User object of the author of the post.
 };
 ```
 
