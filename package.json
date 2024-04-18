@@ -3,7 +3,7 @@
   "type": "module",
   "devDependencies": {
     "markdown-it-footnote": "^4.0.0",
-    "vitepress": "^1.0.2"
+    "vitepress": "^1.1.0"
   },
   "scripts": {
     "dev": "vitepress dev docs",
