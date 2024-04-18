@@ -168,7 +168,7 @@ type Post = {
 
   link: PostLink | undefined; // The posted link (only valid for link posts, undefined otherwise)
 
-  locked: boolean; // If the post was deleted
+  locked: boolean; // If the post was locked
   lockedBy: string | null; // Who locked the post.
   // In what capacity the post was locked, undefined if the post is not locked
   lockedByGroup: "owner" | "admins" | "mods" | undefined;
