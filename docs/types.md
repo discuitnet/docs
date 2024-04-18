@@ -2,6 +2,8 @@
 
 Time values are quoted strings in the RFC 3339 format with sub-second precision.
 
+`undefined` means that the value is not included as part of the object. `null` means that it is included in the object, but does not have a value.
+
 ## Comment
 
 ```ts
@@ -136,34 +138,40 @@ type Notification = {
 ```ts
 type Post = {
   id: string;
-  publicId: string; // The value in https://discuit.net/gaming/post/{publicId}/
   type: "text" | "image" | "link";
+
+  // The value in https://discuit.net/gaming/post/{publicId}
+  publicId: string;
 
   userId: string; // ID of the author.
   username: string; // Username of the author.
+  userGhostId: string | undefined; // The ID of the Ghost user in case the user deleted their account
 
   // In what capacity the post was created.
   // For "speaking officially" as a mod or an admin.
   userGroup: "normal" | "admins" | "mods";
 
   userDeleted: boolean; // Indicated whether the author's account is deleted
-  isPinned: boolean;
+
+  isPinned: boolean; // If the post is pinned in the community
+  isPinnedSite: boolean; // If the post is pinned site-wide
+
   communityId: string; // The ID of the community the post is posted in
   communityName: string; // The name of that community
+  communityProPic: Image; // The profile picture of that community
+  communityBannerImage: Image; // The banner image of that community
 
   title: string; // Greater than 3 characters
-  body: string; // Body of the post (only valid for text-posts)
+  body: string | null; // Body of the post (only valid for text posts, null otherwise)
 
-  // Only valid for link-posts. Could be null.
-  link: {} | null;
+  image: Image | null; // The posted image (only valid for image posts, null otherwise)
 
-  communityProPic: {};
-  communityBannerImage: {};
+  link: PostLink | undefined; // The posted link (only valid for link posts, undefined otherwise)
 
   locked: boolean;
   lockedBy: string | null; // Who locked the post.
-  lockedByGroup: "admins" | "mods" | null;
-  lockedAt: time; // Could be null
+  lockedByGroup: "owner" | "admins" | "mods" | undefined;
+  lockedAt: time | null;
 
   upvotes: int;
   downvotes: int;
@@ -176,25 +184,28 @@ type Post = {
   lastActivityAt: time;
 
   deleted: boolean;
-  deletedAt: time | null; // Could be null
+  deletedAt: time | null;
   deletedBy: string | null; // ID of the user who deleted the post.
-  deletedAs: "normal" | "admins" | "mods" | null;
+  deletedAs: "normal" | "admins" | "mods" | undefined;
 
   // If true, the body of the post and all associated links or images are deleted.
   deletedContent: boolean;
-
-  deletedContentAs: "normal" | "admins" | "mods" | null;
+  deletedContentAs: "normal" | "admins" | "mods" | undefined;
 
   noComments: int; // Comment count
 
-  commments?: Comment[]; // Comments of the post.
+  commments: Comment[] | undefined; // Comments of the post.
   commentsNext: string | null; // Pagination cursor.
 
   // Indicated whether the authenticated user has voted. If not authenticated, the value is null.
   userVoted: boolean | null;
-  userVotedUp: boolean; // Indicates whether the authenticated user's vote is an upvote.
+  userVotedUp: boolean | null; // Indicates whether the authenticated user's vote is an upvote.
 
-  community?: {}; // The community object of the post.
+  isAuthorMuted: boolean;
+  isCommunityMuted: boolean;
+
+  community: Community | undefined;
+  author: User | undefined;
 };
 ```
 
