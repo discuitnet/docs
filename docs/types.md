@@ -97,6 +97,33 @@ type CommunityRule = {
 };
 ```
 
+## Image
+
+```ts
+type Image = {
+  id: string; // The ID of the image.
+  format: "jpeg" | "webp" | "png"; // The image format.
+  mimetype: string; // The image MIME Type, eg. "image/jpeg".
+  width: int; // The image width.
+  height: int; // The image height.
+  size: int; // The size of the image in bytes.
+  averageColor: "rgb([r: int], [g: int], [b: int])"; // The average color of the image.
+  url: string; // A link to the image. The path is not prefixed with /api.
+  copies: ImageCopy[]; // A list of copies of the image in different sizes.
+};
+
+type ImageCopy = {
+  name: string | undefined; // The name of the image copy, used to identify it.
+  width: int; // The width of the image copy.
+  height: int; // The height of the image copy.
+  boxWidth: int; // The width of the box that the image fits into.
+  boxHeight: int; // The height of the box that the image fits into.
+  objectFit: "cover" | "contain"; // How the image should fit into a box, defaults to "contain".
+  format: "jpeg" | "webp" | "png"; // The format of the image copy.
+  url: string; // A link to the image copy. The path is not prefixed with /api.
+};
+```
+
 ## Mute
 
 ```ts
