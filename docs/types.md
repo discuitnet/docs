@@ -193,7 +193,13 @@ type Post = {
 
   image: Image | null; // The posted image (only valid for image posts, null otherwise)
 
-  link: PostLink | undefined; // The posted link (only valid for link posts, undefined otherwise)
+  link:
+    | {
+        url: string;
+        hostname: string;
+        image: Image;
+      }
+    | undefined; // The posted link (only valid for link posts, undefined otherwise)
 
   locked: boolean; // If the post was locked
   lockedBy: string | null; // Who locked the post.
