@@ -201,11 +201,12 @@ type Post = {
 
   link:
     | {
-        url: string;
-        hostname: string;
-        image: Image;
+        url: string; // The URL of the link.
+        hostname: string; // The hostname of the link. For a URL of "https://discuit.net", this would be "discuit.net".
+        // The image object of the OpenGraph image on the site. If no OpenGraph image was found, this is null.
+        image: Image | null;
       }
-    | undefined; // The posted link (only valid for link posts, undefined otherwise)
+    | undefined; // If the post is a link post, the link object, otherwise undefined.
 
   locked: boolean; // If the post was locked
   lockedBy: string | null; // Who locked the post.
