@@ -288,22 +288,44 @@ type ReportReason = {
 
 ```ts
 type User = {
-  id: string;
-  username: string;
-  email: string | null;
-  emailConfirmedAt: time | null;
-  aboutMe: string | null;
-  points: int;
-  isAdmin: boolean;
-  noPosts: int; // Post count of the user
-  noComments: int; // Comment count of the user
-  createdAt: time;
-  deletedAt: time | null;
-  isBanned: boolean;
-  bannedAt: time | null;
-  notificationsNewCount: int; // Number of new notifications the user has
+  id: string; // The ID of the user.
+  username: string; // The username of the user. Minimum 3 characters. Maximum 21 characters.
 
-  // The list of communities that the user moderates.
-  moddingList?: string[] | null;
+  email: string | null; // If an email address was provided, the email address of the user, otherwise null.
+  emailConfirmedAt: time | null; // If the email address was confirmed, the time at which it was confirmed, otherwise null.
+
+  aboutMe: string | null; // The about set by the user. Maximum 10000 characters. If no about was set, this is null.
+  points: int; // The number of points that the user has.
+
+  isAdmin: boolean; // If the user is an admin.
+  proPic: Image | null; // If a profile picture was set, the profile picture of the user, otherwise null.
+  badges: Badge[]; // The list of badges that the user has, can be empty.
+
+  noPosts: int; // The number of posts the user has made.
+  noComments: int; // The number of comments the user has made.
+
+  createdAt: time; // The time at which the account was created.
+  deleted: boolean; // If the account has been deleted.
+  deletedAt: time | null | undefined; // If the account was deleted, the time at which it was deleted, otherwise null.
+
+  upvoteNotificationsOff: boolean; // If the user has turned off upvote notifications.
+  replyNotificationsOff: boolean; // If the user has turned off reply notifications.
+  homeFeed: "all" | "subscriptions"; // The feed the user has set as their home feed.
+  rememberFeedSort: boolean; // If the user wants their feed sort to be remembered.
+  embedsOff: boolean; // If the user wants to turn off embeds for link posts.
+  hideUserProfilePictures: boolean; // If the user wants to hide other users' profile pictures.
+
+  bannedAt: time | null; // If the user was banned, the time at which they were banned, otherwise null.
+  isBanned: boolean; // If the user was banned.
+
+  notificationsNewCount: int; // The number of new notifications the user has.
+
+  // If the user is a moderator in any communities, the list of communities that the user moderates, otherwise null.
+  moddingList: Community[] | null;
+};
+
+type Badge = {
+  id: int; // The ID of the badge.
+  type: string; // The type of badge.
 };
 ```
