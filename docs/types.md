@@ -132,13 +132,14 @@ type ImageCopy = {
 
 ```ts
 type Mute = {
-  id: string;
-  type: "user" | "community";
-  mutedUserId?: int;
-  mutedCommunityId?: int;
-  createdAt: time;
-  mutedUser?: User;
-  mutedCommunity?: Community;
+  id: string; // The ID of the mute.
+  type: "user" | "community"; // Whether a user or community is being muted.
+  mutedUserId: string | undefined; // If a user is being muted, the ID of the user, otherwise undefined.
+  mutedCommunityId: string | undefined; // If a community is being muted, the ID of the community, otherwise undefined.
+  createdAt: time; // The time at which the mute was created.
+  mutedUser: User | undefined; // If a user is being muted, the User object of the user, otherwise undefined.
+  // If a community is being muted, the Community object of the community, otherwise undefined.
+  mutedCommunity: Community | undefined;
 };
 ```
 
