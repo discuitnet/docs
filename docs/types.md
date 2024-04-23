@@ -8,35 +8,39 @@ Time values are quoted strings in the RFC 3339 format with sub-second precision.
 
 ```ts
 type Comment = {
-  id: string;
-  postId: string;
-  postPublicId: string;
+  id: string; // The ID of the comment.
+  postId: string; // The ID of the post the comment belongs to.
+  postPublicId: string; // The public ID of the post the comment belongs to.
 
-  communityId: string;
-  communityName: string;
+  communityId: string; // The ID of the community in which this comment was made.
+  communityName: string; // The name of the community in which this comment was made.
 
-  userId: string | undefined;
-  username: string;
+  userId: string | undefined; // The ID of the user that made the comment.
+  username: string; // The username of the user that made the comment.
   userGhostId: string | undefined; // The ID of the Ghost user in case the author deleted their account, otherwise undefined.
   userGroup: "normal" | "admins" | "mods"; // The capacity in which the comment was created.
   userDeleted: boolean; // Indicates whether the author account is deleted
 
-  parentId: string | null; // Parent comment ID.
-  depth: int; // Top-most comments have a depth of 0
-  noReplies: int; // Total number of replies
-  noDirectReplies: int; // Number of direct replies
-  ancestors: string[] | null; // Comment IDs of all ancestor comments starting from the top-most comment.
+  // The comment ID of the parent comment if it exists, otherwise null if this is a top-level comment.
+  parentId: string | null;
+  depth: int; // How far deep into a comment chain this comment is. Top-level comments have a depth of 0.
+  noReplies: int; // The total number of replies the comment has, including all deeper comments.
+  // The number of direct replies the comment has. This does not include replies deeper than 1 more than the comment itself.
+  noDirectReplies: int;
+  ancestors: string[] | null; // The comment IDs of all ancestor comments starting from the top-most comment.
 
-  body: string; // Comment body
-  upvotes: int;
-  downvotes: int;
-  createdAt: time;
-  editedAt: time | null; // Last edit time.
+  body: string; // The body of the comment.
+  upvotes: int; // The number of upvotes that the comment has.
+  downvotes: int; // The number of downvotes that the comment has.
+  createdAt: time; // The time at which the comment was created.
+  editedAt: time | null; // If the comment was edited, the time at which it was last edited, otherwise null.
 
   contentStripped: boolean | undefined; // If the content of the comment was deleted, otherwise undefined.
-  deleted: boolean;
-  deletedAt: time | null; // Comment deleted time.
-  deletedAs: "normal" | "admins" | "mods" | undefined; // In what capacity the comment was deleted.
+  deleted: boolean; // If the comment was deleted.
+  // If the comment was deleted, the time at which it was deleted, otherwise null.
+  deletedAt: time | null;
+  // If the comment was deleted, in what capacity it was deleted, otherwise undefined.
+  deletedAs: "normal" | "admins" | "mods" | undefined;
 
   author: User; // The User object of the author of the comment.
   // Whether the author is muted by the authenticated user. If not authenticated, this is undefined.
