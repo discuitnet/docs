@@ -147,9 +147,9 @@ type Mute = {
 
 ```ts
 type Notification = {
-  id: int;
+  id: int; // The ID of the notification.
 
-  // Type of notification.
+  // The type of notification.
   type:
     | "new_comment"
     | "comment_reply"
@@ -157,11 +157,12 @@ type Notification = {
     | "deleted_post"
     | "mod_add";
 
-  notif: {}; // The actual notification
+  // The content of the notification. The structure of this object will vary based on the type of notification.
+  notif: {};
 
-  seen: boolean;
-  seenAt: time | null;
-  createdAt: time;
+  seen: boolean; // Whether the notification was seen by the authenticated user.
+  seenAt: time | null; // If the notification was seen, the time at which it was seen, otherwise null.
+  createdAt: time; // The time at which the notification was created.
 };
 ```
 
