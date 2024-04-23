@@ -61,45 +61,43 @@ type Comment = {
 
 ```ts
 type Community = {
-  id: string;
-  userId: string; // ID of the user who created the community
-  name: string;
-  nsfw: boolean; // Indicates whether the community hosts NSFW content
-  about: string | null;
-  noMembers: int; // Member count
-  proPic: {};
-  bannerImage: {};
-  createdAt: time;
-  deletedAt: time | null;
+  id: string; // The ID of the community.
+  userId: string; // ID of the user who created the community.
+  name: string; // The name of the community.
+  nsfw: boolean; // If the community hosts NSFW content.
+  about: string | null; // The description of the community, null if no description was set. Maximum 2000 characters.
+  noMembers: int; // The number of members of the community.
+  proPic: Image; // The community icon.
+  bannerImage: Image; // The community banner image.
+  createdAt: time; // The time at which the community was created.
+  deletedAt: time | null; // If the community was deleted, the time at which it was deleted, otherwise null.
 
-  isDefault?: boolean;
+  // If the community is a default community, only returned if the default communities are requested.
+  isDefault: boolean | undefined;
 
-  userJoined: boolean; // Indicates whether the authenticated user is a member
-  userMod: boolean; // Indicates whether the authenticated user is a moderator
+  userJoined: boolean | null; // Indicates whether the authenticated user is a member. If not authenticated, this is null.
+  userMod: boolean; // Indicates whether the authenticated user is a moderator. If not authenticated, this is null.
 
-  mods?: User[];
+  mods: User[]; // The User objects of all of the moderators of the community.
 
-  rules?: CommunityRule[];
+  rules: CommunityRule[]; // The list of community rules. The list is empty if there are no rules.
 
-  reportDetails?: {
-    noReports: int; // Total reports count
-    noPostReports: int; // Reported posts count
-    noCommentReports: int; // Reported comments count
-  };
+  ReportDetails: // Only visible to moderators of the community, otherwise null.
+  {
+    noReports: int; // The total number of reports.
+    noPostReports: int; // The total number of posts reported.
+    noCommentReports: int; // The total number of comments reported.
+  } | null;
 };
-```
 
-## CommunityRule
-
-```ts
 type CommunityRule = {
-  id: int;
-  rule: string;
-  description: string | null;
-  communityId: string;
-  zIndex: int; // Determines rule ordering, with lower at top
-  createdBy: string;
-  createdAt: time;
+  id: int; // The ID of the community rule.
+  rule: string; // The title of the rule.
+  description: string | null; // The description of the rule. If no description was set, this is null.
+  communityId: string; // The ID of the community in which this is a rule.
+  zIndex: int; // The index of the rule. A smaller value means that the rule is closer to the top.
+  createdBy: string; // The ID of the user that created the rule.
+  createdAt: time; // The time at which the rule was created.
 };
 ```
 
