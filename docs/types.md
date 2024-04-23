@@ -11,21 +11,21 @@ type Comment = {
   id: string;
   postId: string;
   postPublicId: string;
+
   communityId: string;
   communityName: string;
-  userId: string;
-  username: string;
 
-  // The capacity in which the comment was created.
-  userGroup: "normal" | "admins" | "mods";
+  userId: string | undefined;
+  username: string;
+  userGhostId: string | undefined; // The ID of the Ghost user in case the author deleted their account, otherwise undefined.
+  userGroup: "normal" | "admins" | "mods"; // The capacity in which the comment was created.
   userDeleted: boolean; // Indicates whether the author account is deleted
+
   parentId: string | null; // Parent comment ID.
   depth: int; // Top-most comments have a depth of 0
   noReplies: int; // Total number of replies
   noDirectReplies: int; // Number of direct replies
-
-  // Comment IDs of all ancestor comments starting from the top-most comment.
-  ancestors: string[] | null;
+  ancestors: string[] | null; // Comment IDs of all ancestor comments starting from the top-most comment.
 
   body: string; // Comment body
   upvotes: int;
@@ -33,21 +33,23 @@ type Comment = {
   createdAt: time;
   editedAt: time | null; // Last edit time.
 
+  contentStripped: boolean | undefined; // If the content of the comment was deleted, otherwise undefined.
+  deleted: boolean;
   deletedAt: time | null; // Comment deleted time.
+  deletedAs: "normal" | "admins" | "mods" | undefined; // In what capacity the comment was deleted.
 
-  // User ID of the person who deleted the comment.
+  author: User; // The User object of the author of the comment.
+  // Whether the author is muted by the authenticated user. If not authenticated, this is undefined.
+  isAuthorMuted: boolean | undefined;
 
-  // In what capacity the comment was deleted.
-  deletedAs: "normal" | "admins" | "mods" | null;
-
-  // Indicated whether the authenticated user has voted. If not authenticated, the value is null.
+  // Indicated whether the authenticated user has voted. If not authenticated, this is null.
   userVoted: boolean | null;
-  userVotedUp: boolean; // Indicates whether the authenticated user's vote is an upvote
+  // Indicates whether the authenticated user's vote is an upvote. If not authenticated, this is null.
+  userVotedUp: boolean | null;
 
-  postDeleted: boolean; // Indicates whether the post the comment belongs to is deleted
-
-  // If the post is deleted, in what capacity.
-  postDeletedAs: "normal" | "admins" | "mods";
+  postTitle: string | undefined; // The title of the post the comment belongs to.
+  postDeleted: boolean; // Indicates whether the post the comment belongs to is deleted.
+  postDeletedAs: "normal" | "admins" | "mods" | undefined; // If the post is deleted, in what capacity, otherwise undefined.
 };
 ```
 
