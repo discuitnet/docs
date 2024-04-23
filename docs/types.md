@@ -258,20 +258,19 @@ A report is a user submitted report of a post or a comment.
 
 ```ts
 type Report = {
-  id: int;
-  communityId: string;
-  postId: string;
-  reason: string;
-  description: string;
-  reasonId: int;
-  type: "post" | "comment";
-  targetId: string; // ID of the post or the comment
-  dealtAt: time | null;
-  dealtby: string | null;
-  createdAt: time;
-
-  // The comment or the post the report is made against.
-  target: Comment | Post;
+  id: int; // The ID of the report.
+  communityId: string; // The ID of the community in which the report was made.
+  postId: string | null; // If reporting a post, the ID of the post on which the report was made, otherwise null.
+  reason: string; // The reason why the report was made.
+  description: string | null; // A description of the report. This is null if no description is given.
+  reasonId: int; // The ID of the report reason.
+  type: "post" | "comment"; // Whether the report is on a post or a comment.
+  targetId: string; // The ID of the post or the comment that was reported.
+  actionTaken: string | null; // If an action was taken, a description of the action, otherwise null.
+  dealtAt: time | null; // If the report was dealt with, the time at which it was dealt with, otherwise null.
+  dealtby: string | null; // If the report was dealt with, the ID of the user by which it was dealt, otherwise null.
+  createdAt: time; // The time that the report was created.
+  target: Comment | Post; // The Comment or Post objected that the report is made against.
 };
 ```
 
