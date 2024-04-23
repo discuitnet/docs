@@ -63,12 +63,16 @@ type Comment = {
 type Community = {
   id: string; // The ID of the community.
   userId: string; // ID of the user who created the community.
+
   name: string; // The name of the community.
   nsfw: boolean; // If the community hosts NSFW content.
   about: string | null; // The description of the community, null if no description was set. Maximum 2000 characters.
+
   noMembers: int; // The number of members of the community.
+
   proPic: Image; // The community icon.
   bannerImage: Image; // The community banner image.
+
   createdAt: time; // The time at which the community was created.
   deletedAt: time | null; // If the community was deleted, the time at which it was deleted, otherwise null.
 
@@ -79,23 +83,24 @@ type Community = {
   userMod: boolean; // Indicates whether the authenticated user is a moderator. If not authenticated, this is null.
 
   mods: User[]; // The User objects of all of the moderators of the community.
-
   rules: CommunityRule[]; // The list of community rules. The list is empty if there are no rules.
 
-  ReportDetails: // Only visible to moderators of the community, otherwise null.
-  {
+  ReportDetails: {
     noReports: int; // The total number of reports.
     noPostReports: int; // The total number of posts reported.
     noCommentReports: int; // The total number of comments reported.
-  } | null;
+  } | null; // Only visible to moderators of the community, otherwise null.
 };
 
 type CommunityRule = {
   id: int; // The ID of the community rule.
+
   rule: string; // The title of the rule.
   description: string | null; // The description of the rule. If no description was set, this is null.
+
   communityId: string; // The ID of the community in which this is a rule.
   zIndex: int; // The index of the rule. A smaller value means that the rule is closer to the top.
+
   createdBy: string; // The ID of the user that created the rule.
   createdAt: time; // The time at which the rule was created.
 };
@@ -106,23 +111,29 @@ type CommunityRule = {
 ```ts
 type Image = {
   id: string; // The ID of the image.
+
   format: "jpeg" | "webp" | "png"; // The image format.
   mimetype: string; // The image MIME Type, eg. "image/jpeg".
+
   width: int; // The image width.
   height: int; // The image height.
   size: int; // The size of the image in bytes.
+
   averageColor: "rgb([r: int], [g: int], [b: int])"; // The average color of the image.
+
   url: string; // A link to the image. The path is not prefixed with /api.
   copies: ImageCopy[]; // A list of copies of the image in different sizes.
 };
 
 type ImageCopy = {
   name: string | undefined; // The name of the image copy, used to identify it.
+
   width: int; // The width of the image copy.
   height: int; // The height of the image copy.
   boxWidth: int; // The width of the box that the image fits into.
   boxHeight: int; // The height of the box that the image fits into.
   objectFit: "cover" | "contain"; // How the image should fit into a box. Corresponds to the CSS `object-fit` property.
+
   format: "jpeg" | "webp" | "png"; // The format of the image copy.
   url: string; // A link to the image copy. The path is not prefixed with /api.
 };
@@ -136,7 +147,9 @@ type Mute = {
   type: "user" | "community"; // Whether a user or community is being muted.
   mutedUserId: string | undefined; // If a user is being muted, the ID of the user, otherwise undefined.
   mutedCommunityId: string | undefined; // If a community is being muted, the ID of the community, otherwise undefined.
+
   createdAt: time; // The time at which the mute was created.
+
   mutedUser: User | undefined; // If a user is being muted, the User object of the user, otherwise undefined.
   // If a community is being muted, the Community object of the community, otherwise undefined.
   mutedCommunity: Community | undefined;
@@ -172,18 +185,14 @@ type Notification = {
 type Post = {
   id: string; // The ID of the post
   type: "text" | "image" | "link"; // The type of post
-
   // The value in https://discuit.net/gaming/post/{publicId}
   publicId: string;
 
   userId: string; // ID of the author.
   username: string; // Username of the author.
   userGhostId: string | undefined; // The ID of the Ghost user in case the user deleted their account
-
-  // In what capacity the post was created.
-  // For "speaking officially" as a mod or an admin.
+  // In what capacity the post was created. For "speaking officially" as a mod or an admin.
   userGroup: "normal" | "admins" | "mods";
-
   userDeleted: boolean; // Indicated whether the author's account is deleted
 
   isPinned: boolean; // If the post is pinned in the community
@@ -196,9 +205,7 @@ type Post = {
 
   title: string; // Greater than 3 characters
   body: string | null; // Body of the post (only valid for text posts, null otherwise)
-
   image: Image | null; // The posted image (only valid for image posts, null otherwise)
-
   link:
     | {
         url: string; // The URL of the link.
@@ -220,7 +227,6 @@ type Post = {
 
   createdAt: time; // The time when the post was created
   editedAt: time | null; // Last edited time.
-
   // Either the post created time or, if there are comments on the post, the time the most recent comment was created at.
   lastActivityAt: time;
 
@@ -228,15 +234,13 @@ type Post = {
   deletedAt: time | null; // Time at which the post was deleted, null if the post has not been deleted
   deletedBy: string | null; // ID of the user who deleted the post.
   deletedAs: "normal" | "admins" | "mods" | undefined;
-
   // If true, the body of the post and all associated links or images are deleted.
   deletedContent: boolean;
   // In what capacity the content was deleted, undefined if the content has not been deleted.
   deletedContentAs: "normal" | "admins" | "mods" | undefined;
 
   noComments: int; // Comment count.
-
-  commments: Comment[] | undefined; // Comments of the post.
+  comments: Comment[] | undefined; // Comments of the post.
   commentsNext: string | null; // Pagination cursor for comments.
 
   // Indicated whether the authenticated user has voted. If not authenticated, the value is null.
@@ -261,14 +265,17 @@ type Report = {
   id: int; // The ID of the report.
   communityId: string; // The ID of the community in which the report was made.
   postId: string | null; // If reporting a post, the ID of the post on which the report was made, otherwise null.
+
   reason: string; // The reason why the report was made.
   description: string | null; // A description of the report. This is null if no description is given.
   reasonId: int; // The ID of the report reason.
   type: "post" | "comment"; // Whether the report is on a post or a comment.
   targetId: string; // The ID of the post or the comment that was reported.
+
   actionTaken: string | null; // If an action was taken, a description of the action, otherwise null.
   dealtAt: time | null; // If the report was dealt with, the time at which it was dealt with, otherwise null.
-  dealtby: string | null; // If the report was dealt with, the ID of the user by which it was dealt, otherwise null.
+  dealtBy: string | null; // If the report was dealt with, the ID of the user by which it was dealt, otherwise null.
+
   createdAt: time; // The time that the report was created.
   target: Comment | Post; // The Comment or Post objected that the report is made against.
 };
