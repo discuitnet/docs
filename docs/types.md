@@ -118,7 +118,7 @@ type ImageCopy = {
   height: int; // The height of the image copy.
   boxWidth: int; // The width of the box that the image fits into.
   boxHeight: int; // The height of the box that the image fits into.
-  objectFit: "cover" | "contain"; // How the image should fit into a box, defaults to "contain".
+  objectFit: "cover" | "contain"; // How the image should fit into a box. Corresponds to the CSS `object-fit` property.
   format: "jpeg" | "webp" | "png"; // The format of the image copy.
   url: string; // A link to the image copy. The path is not prefixed with /api.
 };
