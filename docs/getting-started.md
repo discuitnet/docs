@@ -1,12 +1,8 @@
 # Getting started
 
-Documentation for the Discuit API.
-
-Base URL: `https://discuit.net/api/`
+Welcome to the documentation for Discuit!
 
 ## Table of contents
 
-- [Authentication](/authentication)
-- [Types](/types)
-- [Errors](/errors/)
-- [Endpoints](/endpoints/)
+- [API Getting Started Guide](/api/getting-started)
+- [Self-hosting Guide](/self-hosting)

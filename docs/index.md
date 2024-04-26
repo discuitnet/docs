@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: Discuit API Documentation
-  tagline: All the information you need to get started with a new Discuit project!
+  name: Discuit Documentation
+  tagline: The official documentation for Discuit.
   image:
     src: /favicon.png
     alt: Discuit logo
