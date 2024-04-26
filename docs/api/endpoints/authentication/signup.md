@@ -25,7 +25,7 @@ Upon successful signup, the user is logged in automatically in the current sessi
 
 ### Possible errors
 
-| HTTP status code | [APIError](/errors/) code |
+| HTTP status code | [APIError](/api/errors/) code |
 | ---------------- | ------------------------- |
 | 409              | `user_exists`             |
 | 409              | `email_exists`            |

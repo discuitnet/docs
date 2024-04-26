@@ -4,7 +4,7 @@ The Discuit API uses [HTTP
 Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies) for
 authentication.
 
-The first call to any GET API endpoint (that does not require authentication) returns the cookies that are needed for authenticated API requests, namely, the session ID (`SID`) cookie and the `csrftoken` cookie. However, it is recommended to use the [`/_initial`](/endpoints/initial) endpoint for this.
+The first call to any GET API endpoint (that does not require authentication) returns the cookies that are needed for authenticated API requests, namely, the session ID (`SID`) cookie and the `csrftoken` cookie. However, it is recommended to use the [`/_initial`](/api/endpoints/initial) endpoint for this.
 
 For example, the command,
 

@@ -66,7 +66,7 @@
 
 - `invalid_http_method`
 
-  The HTTP method by which the request was sent is incorrect. Check the documentation for the [endpoint](/endpoints/) to ensure that you have the correct HTTP method.
+  The HTTP method by which the request was sent is incorrect. Check the documentation for the [endpoint](/api/endpoints/) to ensure that you have the correct HTTP method.
 
 - `invalid_id`
 
@@ -78,7 +78,7 @@
 
 - `invalid_json`
 
-  The JSON body being sent is incorrect. Check the documentation for the [endpoint](/endpoints/) you're sending to, as well as the [type](/api/types) for the data you're sending.
+  The JSON body being sent is incorrect. Check the documentation for the [endpoint](/api/endpoints/) you're sending to, as well as the [type](/api/types) for the data you're sending.
 
 - `invalid_mute_type`
 
