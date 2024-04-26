@@ -41,7 +41,7 @@ Create a file named `config.yaml` in the root directory and copy the contents of
 ## 4. Build and Run Discuit
 
 ```shell
-./build.sh       # Build frontend and backend
+./build.sh           # Build frontend and backend
 ./discuit -migrate   # Run migrations
 ./discuit -serve     # Start the server
 ```
