@@ -37,10 +37,6 @@ export default defineConfig({
         link: "/self-hosting",
       },
       {
-        text: "Architecture",
-        link: "/architecture",
-      },
-      {
         text: "FAQ",
         link: "/faq",
       },
