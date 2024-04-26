@@ -48,7 +48,7 @@ Create a file named `config.yaml` in the root directory and copy the contents of
 ./discuit -serve     # Start the server
 ```
 
-## Running with Docker (Optional)
+## Running with Docker
 
 ### Prerequisites
 
