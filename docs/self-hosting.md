@@ -8,7 +8,7 @@ Before you begin, make sure you have the following installed on your system:
 
 - [Go (1.21 or higher)](https://go.dev/)
 - [MariaDB](https://mariadb.org/)
-- [Redis](https://redis.io/) or [Valkey](https://valkey.io/) if you prefer a proper open-source alternative fork
+- [Redis](https://redis.io/)
 - [Node.js and NPM](https://nodejs.org/en/download/package-manager)
 - [Docker (optional, for running with Docker)](https://www.docker.com/products/docker-desktop/)
 - [libvips](https://libvips.github.io/libvips/install.html) (for image transformations)
@@ -57,7 +57,11 @@ docker build -t discuit .
 ### 2. Run the Docker Container
 
 ```shell
-docker run -d --name discuit -v discuit-db:/var/lib/mysql -v discuit-redis:/var/lib/redis -v discuit-images:/app/images -p 8080:80 discuit
+docker run -d --name discuit \
+-v discuit-db:/var/lib/mysql \
+-v discuit-redis:/var/lib/redis \
+-v discuit-images:/app/images \
+-p 8080:80 discuit
 ```
 
 ### 3. Accessing Discuit
