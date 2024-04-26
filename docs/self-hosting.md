@@ -2,7 +2,9 @@
 
 Welcome to the self-hosting guide for Discuit! Here, you'll find step-by-step instructions on how to set up and run Discuit on your own server.
 
-## Prerequisites
+## Running Locally
+
+### Prerequisites
 
 Before you begin, make sure you have the following installed on your system:
 
@@ -13,9 +15,9 @@ Before you begin, make sure you have the following installed on your system:
 - [Docker (optional, for running with Docker)](https://www.docker.com/products/docker-desktop/)
 - [libvips](https://libvips.github.io/libvips/install.html) (for image transformations)
 
-## 1. Setting Up the Development Environment
+### 1. Setting Up the Development Environment
 
-### Create MariaDB Database
+#### Create MariaDB Database
 
 ```shell
 # Open MariaDB CLI
@@ -28,17 +30,17 @@ create database discuit;
 exit;
 ```
 
-## 2. Clone the Repository
+### 2. Clone the Repository
 
 ```shell
 git clone https://github.com/discuitnet/discuit.git && cd discuit
 ```
 
-## 3. Configure Discuit
+### 3. Configure Discuit
 
 Create a file named `config.yaml` in the root directory and copy the contents of `config.default.yaml` into it. Modify `config.yaml` with your desired configurations.
 
-## 4. Build and Run Discuit
+### 4. Build and Run Discuit
 
 ```shell
 ./build.sh           # Build frontend and backend
@@ -47,6 +49,12 @@ Create a file named `config.yaml` in the root directory and copy the contents of
 ```
 
 ## Running with Docker (Optional)
+
+### Prerequisites
+
+Before you begin, make sure you have the following installed on your system:
+
+- [Docker](https://docs.docker.com/engine/install/)
 
 ### 1. Build the Docker Image
 
