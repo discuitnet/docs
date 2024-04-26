@@ -37,10 +37,6 @@ export default defineConfig({
         link: "/self-hosting",
       },
       {
-        text: "FAQ",
-        link: "/faq",
-      },
-      {
         text: "API",
         items: [
           {
