@@ -2,17 +2,6 @@
 
 Welcome to the self-hosting guide for Discuit! Here, you'll find step-by-step instructions on how to set up and run Discuit on your own server.
 
-## Questions
-
-### How can I get help with setting up Discuit?
-
-- [GitHub Issues](https://github.com/discuitnet/discuit/issues): If you encounter any issues during the setup process, feel free to create a new issue on the Discuit repository.
-- [DiscuitDev](https://discuit.net/DiscuitDev): Join the DiscuitDev community to get help from other Discuit users and developers.
-
-### What are the OS requirements for running Discuit?
-
-Discuit is designed to run on Linux-based systems. If you're using a different operating system, you may need to adapt the instructions accordingly.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following installed on your system:
@@ -22,25 +11,9 @@ Before you begin, make sure you have the following installed on your system:
 - [Redis](https://redis.io/) or [Valkey](https://valkey.io/) if you prefer a proper open-source alternative fork
 - [Node.js and NPM](https://nodejs.org/en/download/package-manager)
 - [Docker (optional, for running with Docker)](https://www.docker.com/products/docker-desktop/)
+- [libvips](https://libvips.github.io/libvips/install.html) (for image transformations)
 
 ## 1. Setting Up the Development Environment
-
-### Install Dependencies
-
-```shell
-sudo apt update
-
-# Install and start MariaDB
-sudo apt install mariadb-server
-sudo systemctl start mariadb.service
-
-# Install and start Redis
-sudo apt install redis-server
-sudo systemctl start redis.service
-
-# Install Node.js and NPM
-sudo apt install nodejs npm
-```
 
 ### Create MariaDB Database
 
@@ -53,12 +26,6 @@ create database discuit;
 
 # Exit MariaDB CLI
 exit;
-```
-
-### Install libvips (for image transformations)
-
-```shell
-sudo apt install libvips-dev
 ```
 
 ## 2. Clone the Repository

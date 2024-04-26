@@ -6,3 +6,5 @@ Welcome to the documentation for Discuit!
 
 - [API Getting Started Guide](/api/getting-started)
 - [Self-hosting Guide](/self-hosting)
+- [Architecture Overview](/architecture)
+- [FAQ](/faq)

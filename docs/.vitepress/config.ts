@@ -41,6 +41,10 @@ export default defineConfig({
         link: "/architecture",
       },
       {
+        text: "FAQ",
+        link: "/faq",
+      },
+      {
         text: "API",
         items: [
           {
