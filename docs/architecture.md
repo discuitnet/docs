@@ -18,4 +18,4 @@ The project directory structure is organized into the following main directories
 - `server`: Houses the REST API backend.
 - `ui`: Contains the React frontend.
 
-Contributions to Discuit are welcomed under the GNU Affero General Public License. Before starting substantial work, it's recommended to create an issue or contact the maintainer for discussion.
+Contributions to Discuit are welcomed under the [GNU Affero General Public License](https://github.com/discuitnet/discuit?tab=AGPL-3.0-1-ov-file). Before starting substantial work, it's recommended to create an issue or contact the maintainer(s) for discussion.
