@@ -2,13 +2,12 @@
 
 Welcome to the self-hosting guide for Discuit! Here, you'll find step-by-step instructions on how to set up and run Discuit on your own server.
 
-## Prerequisites
-
-- [Git](https://git-scm.com/)
-
 ## Cloning the Repository
 
+Install [Git](https://git-scm.com/) and clone the repository by running the following commands in your terminal:
+
 ```shell
+sudo apt install git
 git clone https://github.com/discuitnet/discuit.git && cd discuit
 ```
 
@@ -53,16 +52,15 @@ Create a file named `config.yaml` in the root directory and copy the contents of
 
 ## Running with Docker
 
+::: warning Limitations
+Currently the Docker image is not suitable for production use due to limitations in the configuration. It also only supports AMD64 architecture.
+:::
+
 ### Prerequisites
 
 Before you begin, make sure you have the following installed on your system:
 
 - [Docker](https://docs.docker.com/engine/install/)
-
-### Limitations
-
-- The Docker image is not suitable for production use due to limitations in the configuration.
-- The Docker image only supports amd64 architecture.
 
 ### 1. Build the Docker Image
 
