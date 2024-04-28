@@ -59,6 +59,11 @@ Before you begin, make sure you have the following installed on your system:
 
 - [Docker](https://docs.docker.com/engine/install/)
 
+### Limitations
+
+- The Docker image is not suitable for production use.
+- The Docker image only supports amd64 architecture.
+
 ### 1. Build the Docker Image
 
 ```shell
