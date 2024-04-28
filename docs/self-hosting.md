@@ -61,7 +61,7 @@ Before you begin, make sure you have the following installed on your system:
 
 ### Limitations
 
-- The Docker image is not suitable for production use.
+- The Docker image is not suitable for production use due to limitations in the configuration.
 - The Docker image only supports amd64 architecture.
 
 ### 1. Build the Docker Image
