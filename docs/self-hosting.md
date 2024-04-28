@@ -7,7 +7,6 @@ Welcome to the self-hosting guide for Discuit! Here, you'll find step-by-step in
 Install [Git](https://git-scm.com/) and clone the repository by running the following commands in your terminal:
 
 ```shell
-sudo apt install git
 git clone https://github.com/discuitnet/discuit.git && cd discuit
 ```
 
