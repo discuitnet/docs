@@ -28,7 +28,7 @@ This type of issue is to make any suggestions for content to be added. This can 
 
 ### Getting started
 
-There are build instructions in the READMEs for each site in this repository so that you can get started working on the website. Before you make a PR for your change, ensure that you have been assigned an issue for it first. If you would like to work on an existing issue, leave a comment in that issue saying so, and it will be assigned to you. If an issue does not exist for the change you would like to make, open an issue first, state that you'd like to work on it, and wait for it to be assigned to you.
+There are build instructions in the README so that you can get started working on the website. Before you make a PR for your change, ensure that you have been assigned an issue for it first. If you would like to work on an existing issue, leave a comment in that issue saying so, and it will be assigned to you. If an issue does not exist for the change you would like to make, open an issue first, state that you'd like to work on it, and wait for it to be assigned to you.
 
 ### Testing
 
