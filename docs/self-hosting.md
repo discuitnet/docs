@@ -3,7 +3,7 @@
 Welcome to the self-hosting guide for Discuit! Here, you'll find step-by-step instructions on how to set up and run Discuit on your own server.
 
 ::: warning
-This guide is designed specifically for users running Linux and macOS systems. Please note that **Windows is not officially supported** for self-hosting Discuit. If you choose to attempt installation on Windows, you will be doing so at your own risk and without official support. We recommend that Windows users consider using virtualization tools like WSL (Windows Subsystem for Linux) to create a more compatible environment for hosting Discuit.
+This guide is designed specifically for users running Linux and macOS systems. Please note that **Windows is not officially supported** for self-hosting Discuit. If you choose to attempt installation on Windows, you will be doing so at your own risk and without official support. We recommend that Windows users consider using virtualization tools like [WSL (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install) to create a more compatible environment for hosting Discuit.
 :::
 
 ## Cloning the Repository
