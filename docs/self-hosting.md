@@ -49,8 +49,8 @@ Create a file named `config.yaml` in the root directory and copy the contents of
 
 ```shell
 ./build.sh           # Build frontend and backend
-./discuit -migrate   # Run migrations
-./discuit -serve     # Start the server
+./discuit migrate run   # Run migrations
+./discuit serve     # Start the server
 ```
 
 ## Running with Docker
