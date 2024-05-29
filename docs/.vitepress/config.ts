@@ -181,6 +181,32 @@ export default defineConfig({
                   },
                 ],
               },
+              {
+                text: "Lists",
+                collapsed: true,
+                items: [
+                  {
+                    text: "/users/{username}/lists",
+                    link: "/api/endpoints/lists/lists",
+                  },
+                  {
+                    text: "/users/{username}/lists/{listname}",
+                    link: "/api/endpoints/lists/list",
+                  },
+                  {
+                    text: "/users/{username}/lists/{listname}/items",
+                    link: "/api/endpoints/lists/list-items",
+                  },
+                  {
+                    text: "/lists/{listId}/items/{itemId}",
+                    link: "/api/endpoints/lists/list-item",
+                  },
+                  {
+                    text: "/users/lists/_saved_to",
+                    link: "/api/endpoints/lists/list-saved-to",
+                  },
+                ],
+              },
             ],
           },
           {

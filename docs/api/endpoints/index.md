@@ -47,3 +47,11 @@
 - [`/_user`](/api/endpoints/users/user)
 - [`/users/{username}`](/api/endpoints/users/users-username)
 - [`/users/{username}/feed`](/api/endpoints/users/users-username-feed)
+
+## Lists
+
+- [`/users/{username}/lists`](/api/endpoints/lists/lists)
+- [`/users/{username}/lists/{listname}`](/api/endpoints/lists/list)
+- [`/users/{username}/lists/{listname}/items`](/api/endpoints/lists/list-items)
+- [`/lists/{listId}/items/{itemId}`](/api/endpoints/lists/list-item)
+- [`/users/lists/_saved_to`](/api/endpoints/lists/list-saved-to)
