@@ -139,6 +139,37 @@ type ImageCopy = {
 };
 ```
 
+## List
+
+```ts
+type List = {
+  id: int; // The ID of the list.
+  userId: string; // The ID of the list owner.
+  username: string; // The username of the list owner.
+  name: string; // The name of the list.
+  displayName: string; // The display name of the list.
+  description: string | null;
+  public: boolean; // Indicates whether the list is a public or a private list.
+  numItems: int; // Number of items in the list.
+  sort: "addedDsc" | "addedAsc" | "createdDsc" | "createdAsc"; // The current sorting of the list.
+  createdAt: time;
+  lastUpdatedAt: time; // The last time an item was added to the list (for brand new lists this value is the same as createdAt).
+};
+```
+
+## ListItem
+
+```ts
+type ListItem = {
+  id: int; // The ID of the list item.
+  listId: int;
+  targetType: "post" | "comment";
+  targetId: string;
+  createdAt: time;
+  targetItem: Post | Comment;
+};
+```
+
 ## Mute
 
 ```ts
@@ -385,36 +416,5 @@ type User = {
 type Badge = {
   id: int; // The ID of the badge.
   type: string; // The type of badge.
-};
-```
-
-## List
-
-```ts
-type List = {
-  id: int; // The ID of the list.
-  userId: string; // The ID of the list owner.
-  username: string; // The username of the list owner.
-  name: string; // The name of the list.
-  displayName: string; // The display name of the list.
-  description: string | null;
-  public: boolean; // Indicates whether the list is a public or a private list.
-  numItems: int; // Number of items in the list.
-  sort: "addedDsc" | "addedAsc" | "createdDsc" | "createdAsc"; // The current sorting of the list.
-  createdAt: time;
-  lastUpdatedAt: time; // The last time an item was added to the list (for brand new lists this value is the same as createdAt).
-};
-```
-
-## ListItem
-
-```ts
-type ListItem = {
-  id: int; // The ID of the list item.
-  listId: int;
-  targetType: "post" | "comment";
-  targetId: string;
-  createdAt: time;
-  targetItem: Post | Comment;
 };
 ```
