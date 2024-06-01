@@ -185,23 +185,23 @@ export default defineConfig({
                     items: [
                       {
                         text: "/users/{username}/lists",
-                        link: "/api/endpoints/lists/lists",
+                        link: "/api/endpoints/users/lists/lists",
                       },
                       {
-                        text: "/users/{username}/lists/{listname}",
-                        link: "/api/endpoints/lists/list",
+                        text: "/users/.../lists/{listname}",
+                        link: "/api/endpoints/users/lists/lists-listname",
                       },
                       {
-                        text: "/users/{username}/lists/{listname}/items",
-                        link: "/api/endpoints/lists/list-items",
+                        text: "/users/.../{listname}/items",
+                        link: "/api/endpoints/users/lists/lists-listname-items",
                       },
                       {
                         text: "/lists/{listId}/items/{itemId}",
-                        link: "/api/endpoints/lists/list-item",
+                        link: "/api/endpoints/users/lists/lists-listId-items-itemId",
                       },
                       {
-                        text: "/users/lists/_saved_to",
-                        link: "/api/endpoints/lists/list-saved-to",
+                        text: "/lists/_saved_to",
+                        link: "/api/endpoints/users/lists/lists-saved-to",
                       },
                     ],
                   },
