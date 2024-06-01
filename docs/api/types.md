@@ -148,11 +148,11 @@ type List = {
   username: string; // The username of the list owner.
   name: string; // The name of the list.
   displayName: string; // The display name of the list.
-  description: string | null;
+  description: string | null; // A description of the list. If no description is set, this is null.
   public: boolean; // Indicates whether the list is a public or a private list.
   numItems: int; // Number of items in the list.
   sort: "addedDsc" | "addedAsc" | "createdDsc" | "createdAsc"; // The current sorting of the list.
-  createdAt: time;
+  createdAt: time; // The time at which the list was created.
   lastUpdatedAt: time; // The last time an item was added to the list (for brand new lists this value is the same as createdAt).
 };
 ```
@@ -162,11 +162,11 @@ type List = {
 ```ts
 type ListItem = {
   id: int; // The ID of the list item.
-  listId: int;
-  targetType: "post" | "comment";
-  targetId: string;
-  createdAt: time;
-  targetItem: Post | Comment;
+  listId: int; // The ID of the list in which this is an item.
+  targetType: "post" | "comment"; // The type of the list item, post or comment.
+  targetId: string; // The ID of the original post or comment.
+  createdAt: time; // The time at which this list item was created (when the post/comment was added to the list).
+  targetItem: Post | Comment; // The original post or comment object.
 };
 ```
 
