@@ -48,10 +48,10 @@
 - [`/users/{username}`](/api/endpoints/users/users-username)
 - [`/users/{username}/feed`](/api/endpoints/users/users-username-feed)
 
-## Lists
+### Lists
 
-- [`/users/{username}/lists`](/api/endpoints/lists/lists)
-- [`/users/{username}/lists/{listname}`](/api/endpoints/lists/list)
-- [`/users/{username}/lists/{listname}/items`](/api/endpoints/lists/list-items)
-- [`/lists/{listId}/items/{itemId}`](/api/endpoints/lists/list-item)
-- [`/users/lists/_saved_to`](/api/endpoints/lists/list-saved-to)
+- [`/users/{username}/lists`](/api/endpoints/users/lists/lists)
+- [`/users/{username}/lists/{listname}`](/api/endpoints/users/lists/lists-listname)
+- [`/users/{username}/lists/{listname}/items`](/api/endpoints/users/lists/lists-listname-items)
+- [`/lists/{listId}/items/{itemId}`](/api/endpoints/users/lists/lists-listId-items-itemId)
+- [`/users/lists/_saved_to`](/api/endpoints/users/lists/lists-saved-to)
