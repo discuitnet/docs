@@ -179,6 +179,32 @@ export default defineConfig({
                     text: "/users/{username}/feed",
                     link: "/api/endpoints/users/users-username-feed	",
                   },
+                  {
+                    text: "Lists",
+                    collapsed: true,
+                    items: [
+                      {
+                        text: "/users/{username}/lists",
+                        link: "/api/endpoints/users/lists/lists",
+                      },
+                      {
+                        text: "/users/.../lists/{listname}",
+                        link: "/api/endpoints/users/lists/lists-listname",
+                      },
+                      {
+                        text: "/users/.../{listname}/items",
+                        link: "/api/endpoints/users/lists/lists-listname-items",
+                      },
+                      {
+                        text: "/lists/{listId}/items/{itemId}",
+                        link: "/api/endpoints/users/lists/lists-listId-items-itemId",
+                      },
+                      {
+                        text: "/lists/_saved_to",
+                        link: "/api/endpoints/users/lists/lists-saved-to",
+                      },
+                    ],
+                  },
                 ],
               },
             ],

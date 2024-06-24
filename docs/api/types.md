@@ -139,6 +139,37 @@ type ImageCopy = {
 };
 ```
 
+## List
+
+```ts
+type List = {
+  id: int; // The ID of the list.
+  userId: string; // The ID of the list owner.
+  username: string; // The username of the list owner.
+  name: string; // The name of the list.
+  displayName: string; // The display name of the list.
+  description: string | null; // A description of the list. If no description is set, this is null.
+  public: boolean; // Indicates whether the list is a public or a private list.
+  numItems: int; // Number of items in the list.
+  sort: "addedDsc" | "addedAsc" | "createdDsc" | "createdAsc"; // The current sorting of the list.
+  createdAt: time; // The time at which the list was created.
+  lastUpdatedAt: time; // The last time an item was added to the list (for brand new lists this value is the same as createdAt).
+};
+```
+
+## ListItem
+
+```ts
+type ListItem = {
+  id: int; // The ID of the list item.
+  listId: int; // The ID of the list in which this is an item.
+  targetType: "post" | "comment"; // The type of the list item, post or comment.
+  targetId: string; // The ID of the original post or comment.
+  createdAt: time; // The time at which this list item was created (when the post/comment was added to the list).
+  targetItem: Post | Comment; // The original post or comment object.
+};
+```
+
 ## Mute
 
 ```ts
@@ -171,13 +202,13 @@ type Notification = {
     | "mod_add";
 
   // The content of the notification. The structure of this object will vary based on the type of notification.
-	notif:
-		| NewVotesNotif
-		| DeletedPostNotif
-		| NewCommentNotif
-		| CommentReplyNotif
-		| NewBadgeNotif
-		| ModAddNotif;
+  notif:
+    | NewVotesNotif
+    | DeletedPostNotif
+    | NewCommentNotif
+    | CommentReplyNotif
+    | NewBadgeNotif
+    | ModAddNotif;
 
   seen: boolean; // Whether the notification was seen by the authenticated user.
   seenAt: time | null; // If the notification was seen, the time at which it was seen, otherwise null.
@@ -185,52 +216,50 @@ type Notification = {
 };
 
 type NewVotesNotif = {
-	noVotes: number; // The number of votes the post or comment received.
-	targetId: string; // The ID of the post or comment that was voted on.
-	targetType: "post" | "comment"; // The type of the target.
-	post: Post | Comment; // The target item, either of type `Comment` if `targetType` is "comment" or `Post` otherwise.
-	comment: Comment; // Only present if the `targetType` is "comment".
-}
+  noVotes: number; // The number of votes the post or comment received.
+  targetId: string; // The ID of the post or comment that was voted on.
+  targetType: "post" | "comment"; // The type of the target.
+  post: Post | Comment; // The target item, either of type `Comment` if `targetType` is "comment" or `Post` otherwise.
+  comment: Comment; // Only present if the `targetType` is "comment".
+};
 
 type DeletedPostNotif = {
-	deletedAs: "mods" | "admins"; // The user group that deleted the post.
-	post: Post; // The post that was deleted.
-	targetId: string; // The ID of the post that was deleted.
-	targetType: "post" | "comment"; // The type of the target.
-}
+  deletedAs: "mods" | "admins"; // The user group that deleted the post.
+  post: Post; // The post that was deleted.
+  targetId: string; // The ID of the post that was deleted.
+  targetType: "post" | "comment"; // The type of the target.
+};
 
 type NewCommentNotif = {
-	commentAuthor: string; // The username of the comment author.
-	commentId: string; // The ID of the comment.
-	firstCreatedAt: time; // The time at which the first comment was created.
-	noComments: number; // The number of new comments on the post.
-	post: Post; // The parent post.
-	postId: string; // The ID of the post.
-}
+  commentAuthor: string; // The username of the comment author.
+  commentId: string; // The ID of the comment.
+  firstCreatedAt: time; // The time at which the first comment was created.
+  noComments: number; // The number of new comments on the post.
+  post: Post; // The parent post.
+  postId: string; // The ID of the post.
+};
 
 type CommentReplyNotif = {
-	commentAuthor: string; // The username of the comment author.
-	commentId: string; // The ID of the comment.
-	firstCreatedAt: time; // The time at which the first comment was created.
-	noComments: number; // The number of comments on the post.
-	parentCommitId: string; // The ID of the parent comment.
-	post: Post; // The parent post.
-	postId: string; // The ID of the post.
-}
+  commentAuthor: string; // The username of the comment author.
+  commentId: string; // The ID of the comment.
+  firstCreatedAt: time; // The time at which the first comment was created.
+  noComments: number; // The number of comments on the post.
+  parentCommitId: string; // The ID of the parent comment.
+  post: Post; // The parent post.
+  postId: string; // The ID of the post.
+};
 
 type NewBadgeNotif = {
-	badgeType: string; // The type of the badge.
-	user: User; // The user who received the badge.
-}
-
+  badgeType: string; // The type of the badge.
+  user: User; // The user who received the badge.
+};
 
 type ModAddNotif = {
-	addedBy: string; // The username of the user who added the mod.
-	community: Community; // The community where the user was added as a mod.
-	communityName: string; // The name of the community.
-}
+  addedBy: string; // The username of the user who added the mod.
+  community: Community; // The community where the user was added as a mod.
+  communityName: string; // The name of the community.
+};
 ```
-
 
 ## Post
 
