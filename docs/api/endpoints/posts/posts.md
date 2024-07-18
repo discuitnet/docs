@@ -46,11 +46,11 @@ type Response = {
 ### Possible errors
 
 | HTTP Status Code | [APIError](/api/errors/) code |
-| ---------------- | ------------------------- |
-| 403              | not_admin                 |
-| 400              | invalid_cursor            |
-| 400              | invalid_limit             |
-| 400              | invalid_filter            |
+| ---------------- | ----------------------------- |
+| 403              | not_admin                     |
+| 400              | invalid_cursor                |
+| 400              | invalid_limit                 |
+| 400              | invalid_filter                |
 
 ## POST
 
@@ -60,14 +60,24 @@ Request must have the following JSON body:
 
 ```ts
 type Request = {
-  // Post type. Default is "text".
-  type: "text" | "image" | "link";
-
+  type: "text" | "image" | "link"; // Post type. Default is "text"
   title: string; // Required
+  url: string; // Only valid for link-posts
   body: string;
   community: string; // Name of community, required
-  url: string; // Only valid for link-posts
+
+  // Denotes in which capacity the authenticated user is submitting this post.
+  // If empty, the value is treated as "normal".
+  userGroup: "normal" | "admins" | "mods" | "";
+
+  imageId: string; // Id of an uploaded image. Valid only for image-posts. DEPRECATED (use the field below).
+
+  // These images, in order they are listed here, are to be the images of this
+  // post. This field is only valid for image-posts.
+  images: ImageUpload[] | null;
 };
 ```
+
+Go to the [types page](/api/types#image) for a definition of the `ImageUpload` type.
 
 If successful, a newly created post is returned.

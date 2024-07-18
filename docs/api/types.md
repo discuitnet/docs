@@ -137,6 +137,11 @@ type ImageCopy = {
   format: "jpeg" | "webp" | "png"; // The format of the image copy.
   url: string; // A link to the image copy. The path is not prefixed with /api.
 };
+
+type ImageUpload = {
+  imageId: string; // The ID of the image.
+  caption: string;
+};
 ```
 
 ## List
@@ -287,7 +292,8 @@ type Post = {
 
   title: string; // Greater than 3 characters
   body: string | null; // Body of the post (only valid for text posts, null otherwise)
-  image: Image | null; // The posted image (only valid for image posts, null otherwise)
+  image: Image | null; // The posted image (only valid for image posts, null otherwise); DEPRECATED (use the below field instead)
+  images: Images[]; // The images of the post (only valid for image posts, empty otherwise)
   link:
     | {
         url: string; // The URL of the link.
