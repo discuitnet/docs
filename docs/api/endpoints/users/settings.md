@@ -33,7 +33,7 @@ type Request = {
   aboutMe: string;
   upvoteNotificationsOff: boolean;
   replyNotificationsOff: boolean;
-  homeFeed: "All" | "Subscriptions";
+  homeFeed: "all" | "subscriptions";
   rememberFeedSort: boolean;
   embedsOff: boolean;
   email: string;
