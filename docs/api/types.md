@@ -72,6 +72,7 @@ type Community = {
 
   proPic: Image; // The community icon.
   bannerImage: Image; // The community banner image.
+  postingRestricted: boolean; // If true, only moderators of the community (or admins) can create posts in the community.
 
   createdAt: time; // The time at which the community was created.
   deletedAt: time | null; // If the community was deleted, the time at which it was deleted, otherwise null.

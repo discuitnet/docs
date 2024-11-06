@@ -19,5 +19,6 @@ Requests may have the following JSON body:
 type Request = {
   nsfw: boolean | null;
   about: string | null;
+  postingRestricted: boolean | null;
 };
 ```
