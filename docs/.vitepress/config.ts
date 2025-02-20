@@ -1,5 +1,5 @@
-import { defineConfig } from "vitepress";
 import markdownItFootnote from "markdown-it-footnote";
+import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -24,7 +24,7 @@ export default defineConfig({
       },
       {
         text: "Discuit",
-        link: "https://discuit.net",
+        link: "https://discuit.org",
       },
     ],
     sidebar: [
@@ -258,6 +258,6 @@ export default defineConfig({
   },
   lastUpdated: true,
   sitemap: {
-    hostname: "https://docs.discuit.net",
+    hostname: "https://docs.discuit.org",
   },
 });

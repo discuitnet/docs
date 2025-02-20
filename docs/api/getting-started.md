@@ -2,7 +2,7 @@
 
 Documentation for the Discuit API.
 
-Base URL: `https://discuit.net/api/`
+Base URL: `https://discuit.org/api/`
 
 ## Table of contents
 

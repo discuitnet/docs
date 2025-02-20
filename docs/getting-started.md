@@ -35,7 +35,7 @@ Contributions to Discuit are welcomed under the [GNU Affero General Public Licen
 ### How can I get help with setting up Discuit?
 
 - [GitHub Issues](https://github.com/discuitnet/discuit/issues): If you encounter any issues during the setup process, feel free to create a new issue on the Discuit repository.
-- [DiscuitDev](https://discuit.net/DiscuitDev): Join the DiscuitDev community to get help from other Discuit users and developers.
+- [DiscuitDev](https://discuit.org/DiscuitDev): Join the DiscuitDev community to get help from other Discuit users and developers.
 
 ### What are the OS requirements for running Discuit?
 

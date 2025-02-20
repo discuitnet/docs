@@ -13,5 +13,5 @@ hero:
       link: /getting-started
     - theme: alt
       text: Go to Discuit
-      link: https://discuit.net
+      link: https://discuit.org
 ---

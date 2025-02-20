@@ -9,7 +9,7 @@ The first call to any GET API endpoint (that does not require authentication) re
 For example, the command,
 
 ```bash
-curl 'https://discuit.net/api/_initial' -XGET -I
+curl 'https://discuit.org/api/_initial' -XGET -I
 ```
 
 would return these HTTP headers:
@@ -28,7 +28,7 @@ The value in the `csrftoken` cookie needs to be passed in an `X-Csrf-Token` HTTP
 A login request, for example, would look like this:
 
 ```bash
-curl 'https://discuit.net/api/_login' -XPOST \
+curl 'https://discuit.org/api/_login' -XPOST \
 -H 'Cookie: SID=GyzghHpzr3vOdUG2pOoEeqRBFKwbVWBw5Ovy' \
 -H 'X-Csrf-Token: FcVgW9FZD8w3iptTeh-Nm3cWm4QjVXYulKjqMWjSJkg=' \
 -d '{"username":"neo","password":"whatever"}'
